@@ -4,3 +4,5 @@ if status is-interactive
 end
 
 source $HOME/Dotfiles/fish/modules/cargo.fish
+
+test -f $HOME/Dotfiles/fish/config.local.fish && source $HOME/Dotfiles/fish/config.local.fish
