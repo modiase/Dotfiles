@@ -34,6 +34,12 @@ font:
       
 live_config_reload: true
 
+shell:
+  program: /opt/homebrew/bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
 tabspaces: 4
 
 window:
