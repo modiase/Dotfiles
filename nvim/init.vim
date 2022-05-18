@@ -4,7 +4,8 @@
 :set shiftwidth=4
 :set smarttab
 
-source ~/Dotfiles/nvim/modules/bindings.vim
+source ~/Dotfiles/nvim/bindings.vim
+
 source ~/Dotfiles/nvim/modules/plug.vim
 source ~/Dotfiles/nvim/modules/theme.vim
 source ~/Dotfiles/nvim/modules/nerdtree.vim
