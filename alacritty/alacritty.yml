@@ -1,7 +1,7 @@
 
 colors:
   primary:
-    background: '#2e3440'
+    background: '#1e2430'
     foreground: '#d8dee9'
     dim_foreground: '#a5abb6'
   cursor:
@@ -50,11 +50,11 @@ colors:
 
 font:
   normal: 
-    family: 'RobotoMono Nerd Font'
+    family: 'Iosevka Nerd Font'
   bold: 
-    family: 'RobotoMono Nerd Font'
+    family: 'Iosevka Nerd Font'
   italic: 
-    family: 'RobotoMono Nerd Font'
+    family: 'Iosevka Nerd Font'
   size: 12.0
   use_thin_strokes: true
       
