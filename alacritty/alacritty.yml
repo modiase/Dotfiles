@@ -1,7 +1,7 @@
 
 colors:
   primary:
-    background: '0x0e1117'
+    background: '0x0e1822'
     foreground: '0xabb2bf'
   normal:
     black:   '0x1e2127'
@@ -47,5 +47,5 @@ window:
     x: 0
     y: 0
   dynamic_padding: true
-  decorations: buttonless
+  decorations: transparent
   startup_mode: SimpleFullscreen

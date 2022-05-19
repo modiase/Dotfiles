@@ -14,5 +14,6 @@ Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'romgrk/barbar.nvim'
 
 call plug#end()
