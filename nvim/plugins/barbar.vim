@@ -19,3 +19,5 @@ nnoremap <silent>    ª :BufferLast<CR>
 nnoremap <silent>    π :BufferPin<CR>
 " Close buffer
 nnoremap <silent>    ç :BufferClose<CR>
+
+nnoremap <silent> ø :BufferOrderByBufferNumber<CR>
