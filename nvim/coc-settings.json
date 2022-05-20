@@ -1,7 +1,17 @@
 {
 
-	"explorer.width": 100,
-	"explorer.icon.enableNerdfont": true
-
+	"explorer.width": 30,
+	"explorer.icon.enableNerdfont": true,
+	"explorer.keyMappings.global": {
+        "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
+        "s": "open:vsplit",
+        "mm": "rename",
+        "mc": "copyFile",
+        "C": "copyFile",
+        "md": "delete",
+        "D": "delete",
+        "ma": "addFile",
+        "mA": "addDirectory"
+}
 
 }

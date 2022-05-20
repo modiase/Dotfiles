@@ -1,5 +1,6 @@
 
-noremap , :wqa<CR>
+" noremap , :wqa<CR>
+nnoremap ~ :wqa<CR>
 nnoremap ` :qa!<CR>
 nnoremap <silent> <C-s> :w<CR>
 
@@ -14,3 +15,5 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
 nnoremap <silent> <C-r> :vs<CR>
 nnoremap <silent> <C-x> <C-W>c
+nnoremap , :tabprevious<CR>
+nnoremap . :tabnext<CR>

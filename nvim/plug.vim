@@ -13,6 +13,5 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'romgrk/barbar.nvim'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call plug#end()
