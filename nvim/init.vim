@@ -3,6 +3,7 @@
 :set tabstop=4
 :set shiftwidth=4
 :set smarttab
+:set mouse=a
 
 source ~/Dotfiles/nvim/bindings.vim
 source ~/Dotfiles/nvim/plug.vim
