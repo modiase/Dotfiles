@@ -2,6 +2,9 @@
 
 	"explorer.width": 80,
 	"explorer.icon.enableNerdfont": true,
+    "explorer.file.hiddenRules": {
+        "patternMatches": [".git/*"]
+    },
 	"explorer.keyMappings.global": {
         "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
         "s": "open:vsplit",
