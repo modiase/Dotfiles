@@ -1,6 +1,6 @@
 {
 
-	"explorer.width": 30,
+	"explorer.width": 80,
 	"explorer.icon.enableNerdfont": true,
 	"explorer.keyMappings.global": {
         "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
