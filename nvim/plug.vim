@@ -13,5 +13,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'romgrk/barbar.nvim'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
