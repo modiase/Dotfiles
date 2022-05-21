@@ -121,4 +121,4 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 nnoremap <silent> <space>e :CocCommand explorer --focus<CR>
-nnoremap <silent> <space>f :CocCommand explorer --preset floating<CR>
+nnoremap <silent> <space>f :CocCommand explorer --focus --no-toggle<CR>
