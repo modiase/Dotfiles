@@ -14,5 +14,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'romgrk/barbar.nvim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'glepnir/dashboard-nvim'
+Plug 'folke/which-key.nvim'
 
 call plug#end()
