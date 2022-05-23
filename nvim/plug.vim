@@ -17,5 +17,6 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'folke/which-key.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
 
 call plug#end()

@@ -8,6 +8,8 @@
     "typescriptreact",
     "graphql"
   ],
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
   "explorer.width": 40,
   "explorer.icon.enableNerdfont": true,
   "explorer.file.hiddenRules": {

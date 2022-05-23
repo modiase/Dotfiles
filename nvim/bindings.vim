@@ -2,11 +2,10 @@
 " noremap , :wqa<CR>
 nnoremap ~ :wqa<CR>
 nnoremap ` :qa!<CR>
-nnoremap <silent> <C-s> :w<CR>
 
 " Buffer management
-nnoremap <silent> , :bprev<CR>
 nnoremap <silent> . :bnext<CR>
+nnoremap <silent> , :bprev<CR>
 nnoremap <silent> <C-x> :bdelete<CR>
 
 " Window management

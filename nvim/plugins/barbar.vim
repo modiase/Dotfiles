@@ -1,23 +1,29 @@
-" Move to previous/next
-nnoremap <silent>    ≤ :BufferPrevious<CR>
-nnoremap <silent>    ≥ :BufferNext<CR>
-" Re-order to previous/next
-
-nnoremap <silent>    ¯ :BufferMovePrevious<CR>
-nnoremap <silent>    ˘ :BufferMoveNext<CR>
 " Goto buffer in position...
-nnoremap <silent>    ¡ :BufferGoto 1<CR>
-nnoremap <silent>    ™ :BufferGoto 2<CR>
-nnoremap <silent>    £ :BufferGoto 3<CR>
-nnoremap <silent>    € :BufferGoto 4<CR>
-nnoremap <silent>    ∞ :BufferGoto 5<CR>
-nnoremap <silent>    § :BufferGoto 6<CR>
-nnoremap <silent>    ¶ :BufferGoto 7<CR>
-nnoremap <silent>    • :BufferGoto 8<CR>
-nnoremap <silent>    ª :BufferLast<CR>
+nnoremap <silent>    <A-1> :BufferGoto 1<CR>
+nnoremap <silent>    <A-2> :BufferGoto 2<CR>
+nnoremap <silent>    <A-3> :BufferGoto 3<CR>
+nnoremap <silent>    <A-4> :BufferGoto 4<CR>
+nnoremap <silent>    <A-5> :BufferGoto 5<CR>
+nnoremap <silent>    <A-6> :BufferGoto 6<CR>
+nnoremap <silent>    <A-7> :BufferGoto 7<CR>
+nnoremap <silent>    <A-8> :BufferGoto 8<CR>
+nnoremap <silent>    <A-9> :BufferLast<CR>
 " Pin/unpin buffer
-nnoremap <silent>    π :BufferPin<CR>
+nnoremap <silent>    <A-p> :BufferPin<CR>
 " Close buffer
-nnoremap <silent>    ç :BufferClose<CR>
-
-nnoremap <silent> ø :BufferOrderByBufferNumber<CR>
+nnoremap <silent>    <A-c> :BufferClose<CR>
+" Wipeout buffer
+"                          :BufferWipeout<CR>
+" Close commands
+"                          :BufferCloseAllButCurrent<CR>
+"                          :BufferCloseAllButPinned<CR>
+"                          :BufferCloseAllButCurrentOrPinned<CR>
+"                          :BufferCloseBuffersLeft<CR>
+"                          :BufferCloseBuffersRight<CR>
+" Magic buffer-picking mode
+nnoremap <silent> <Space>bp    :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
+nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>

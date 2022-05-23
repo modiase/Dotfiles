@@ -120,4 +120,5 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-nnoremap <silent> <space>e :CocCommand explorer --focus<CR>
+nnoremap <silent> <space>ee :CocCommand explorer --focus<CR>
+nnoremap <silent> <space>ef :CocCommand explorer --focus --no-toggle<CR>
