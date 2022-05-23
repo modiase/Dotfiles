@@ -1,5 +1,4 @@
 *.bk
 *.local*
 **/.DS_Store
-coc/*history.json
 **/node_modules/*
