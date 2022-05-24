@@ -123,4 +123,4 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 nnoremap <silent> <space>ee :CocCommand explorer --focus<CR>
 nnoremap <silent> <space>ef :CocCommand explorer --focus --no-toggle<CR>
 
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-snippets', 'coc-explorer', 'coc-python', 'coc-vimlsp', 'coc-prettier', 'coc-ccls']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-snippets', 'coc-explorer', 'coc-python', 'coc-vimlsp', 'coc-prettier', 'coc-clangd']
