@@ -4,6 +4,7 @@
 :set shiftwidth=4
 :set smarttab
 :set mouse=a
+:set cc=80,120
 :set updatetime=300
 
 source ~/Dotfiles/nvim/bindings.vim
