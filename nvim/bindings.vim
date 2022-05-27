@@ -1,5 +1,3 @@
-
-" noremap , :wqa<CR>
 nnoremap ~ :wqa<CR>
 nnoremap ` :qa!<CR>
 
@@ -15,3 +13,5 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
 
+vmap <Tab> >gv
+vmap <S-Tab> <gv
