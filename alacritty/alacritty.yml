@@ -1,7 +1,7 @@
 
 colors:
   primary:
-    background: '#1e2430'
+    background: '#181c26'
     foreground: '#d8dee9'
     dim_foreground: '#a5abb6'
   cursor:
