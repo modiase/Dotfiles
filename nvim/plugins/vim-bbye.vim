@@ -1,1 +1,1 @@
-nnoremap <leader> X :Bdelete<CR>
+noremap <silent> <leader>x :Bdelete<CR>
