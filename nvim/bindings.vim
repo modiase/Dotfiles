@@ -1,5 +1,6 @@
 nnoremap ~ :wqa<CR>
 nnoremap ` :qa!<CR>
+nnoremap <C-s> :w<CR>
 
 " Buffer management
 nnoremap <silent> . :bnext<CR>
