@@ -4,8 +4,6 @@ nnoremap ` :qa!<CR>
 " Buffer management
 nnoremap <silent> . :bnext<CR>
 nnoremap <silent> , :bprev<CR>
-nnoremap <silent> <C-x> :bdelete<CR>
-nnoremap <silent> <Space>x :bdelete<CR>
 
 " Window management
 nnoremap <C-l> <C-w>l

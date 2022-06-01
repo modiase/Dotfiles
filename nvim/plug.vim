@@ -20,5 +20,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'APZelos/blamer.nvim'
+Plug 'moll/vim-bbye'
 
 call plug#end()
