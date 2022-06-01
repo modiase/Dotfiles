@@ -5,3 +5,4 @@ source ~/Dotfiles/nvim/plugins/dashboard.vim
 source ~/Dotfiles/nvim/plugins/theme.vim
 source ~/Dotfiles/nvim/plugins/which-key.vim
 source ~/Dotfiles/nvim/plugins/blamer.vim
+source ~/Dotfiles/nvim/plugins/vim-bbye.vim
