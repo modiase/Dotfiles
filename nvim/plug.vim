@@ -16,10 +16,11 @@ Plug 'romgrk/barbar.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'glepnir/dashboard-nvim'
 Plug 'folke/which-key.nvim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 Plug 'APZelos/blamer.nvim'
 Plug 'moll/vim-bbye'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-project.nvim'
 
 call plug#end()
