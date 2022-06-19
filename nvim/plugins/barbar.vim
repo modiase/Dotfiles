@@ -2,7 +2,7 @@
 let bufferline = get(g:, 'bufferline', {})
 
 " Open buffers in number order
-let bufferline.add_in_buffer_number_order = v:true
+let bufferline.insert_at_end = v:true
 
 " Goto buffer in position...
 nnoremap <silent>    <A-1> :BufferGoto 1<CR>

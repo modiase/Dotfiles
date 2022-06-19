@@ -1,4 +1,3 @@
-
 call plug#begin()
 
 Plug 'kyazdani42/nvim-web-devicons'
@@ -22,5 +21,6 @@ Plug 'moll/vim-bbye'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
+Plug 'folke/persistence.nvim'
 
 call plug#end()
