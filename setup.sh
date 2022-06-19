@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PLATFORM=$(uname)
+
+
