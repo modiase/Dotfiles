@@ -7,3 +7,5 @@ nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
 nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
 nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
 nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
+
+:autocmd VimLeave * <silent> :SessionSave<CR>
