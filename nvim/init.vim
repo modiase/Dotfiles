@@ -7,7 +7,10 @@
 :set updatetime=300
 
 source ~/Dotfiles/nvim/bindings.vim
+source ~/Dotfiles/nvim/functions.vim
 source ~/Dotfiles/nvim/plug.vim
 source ~/Dotfiles/nvim/plugins/index.vim
 
 let g:mapleader="\<Space>"
+
+syntax on
