@@ -23,5 +23,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'rhysd/conflict-marker.vim'
+Plug 'akinsho/git-conflict.nvim'
 
 call plug#end()
