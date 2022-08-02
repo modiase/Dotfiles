@@ -5,6 +5,7 @@
 :set smarttab
 :set mouse=a
 :set updatetime=300
+syntax on
 
 source ~/Dotfiles/nvim/bindings.vim
 source ~/Dotfiles/nvim/functions.vim
@@ -13,4 +14,3 @@ source ~/Dotfiles/nvim/plugins/index.vim
 
 let g:mapleader="\<Space>"
 
-syntax on
