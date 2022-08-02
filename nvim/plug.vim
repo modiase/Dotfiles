@@ -23,5 +23,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'akinsho/git-conflict.nvim'
+Plug 'simeji/winresizer'
 
 call plug#end()
