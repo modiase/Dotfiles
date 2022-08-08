@@ -43,3 +43,4 @@ db.custom_center = {
   shortcut = 'SPC f g'},
 } 
 db.custom_footer = {}
+db.session_directory = home .. '/.vim'
