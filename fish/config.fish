@@ -14,3 +14,8 @@ test -f $HOME/Dotfiles/fish/config.local.fish && source $HOME/Dotfiles/fish/conf
 
 set -gx FZF_DEFAULT_COMMAND 'rg --files --follow --no-ignore-vcs --hidden -g "!{**/node_modules/*,**/.git/*}"'
 set -gx TERM "alacritty"
+
+# pnpm
+set -gx PNPM_HOME "/Users/moye/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end
