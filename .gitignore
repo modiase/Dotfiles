@@ -3,3 +3,5 @@
 **/.DS_Store
 **/node_modules/*
 nvim/sessions/*
+
+fish/fish_variables
