@@ -50,6 +50,7 @@ vim.api.nvim_set_keymap('n', '<Leader>sl', '<cmd>SessionLoad<CR>', { noremap = t
 vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fm', '<cmd>Telescope marks<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>tc', '<cmd>Telescope colorscheme<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>cn', '<cmd>DashboardNewFile<CR>', { noremap = true, silent = true })
 
