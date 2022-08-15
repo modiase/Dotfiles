@@ -43,4 +43,14 @@ db.custom_center = {
   shortcut = 'SPC f g'},
 } 
 db.custom_footer = {}
-db.session_directory = home .. '/.vim'
+db.session_directory = home .. '/.vim/sessions'
+
+vim.api.nvim_set_keymap('n', '<Leader>ss', '<cmd>SessionSave<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>sl', '<cmd>SessionLoad<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>tc', '<cmd>Telescope colorscheme<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>cn', '<cmd>DashboardNewFile<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_command('autocmd VimLeave * :SessionSave')
