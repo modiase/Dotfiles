@@ -5,6 +5,7 @@ tap "homebrew/core"
 tap "ngrok/ngrok"
 
 brew "awscli"
+brew "bat"
 brew "coreutils"
 brew "fd"
 brew "fish"
