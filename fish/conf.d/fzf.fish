@@ -13,7 +13,7 @@ set --global _fzf_search_vars_command '_fzf_search_variables (set --show | psub)
 # Install the default bindings, which are mnemonic and minimally conflict with fish's preset bindings
 # EDIT: Updated to add my preferences
 fzf_configure_bindings \
-    --directory=\ct \
+    --directory=\cf \
     --git_status=\cs  \
     --processes=\cp
 
@@ -33,7 +33,9 @@ end
 
 set -gx FZF_DEFAULT_OPTS "--height 40% --layout=reverse --extended $FZF_THEME"
 set -gx FZF_DEFAULT_COMMAND "rg --files --follow --no-ignore-vcs --hidden -g \"!{**/node_modules/*,**/.git/*}\" 2>/dev/null"
-set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
-set -gx FZF_ALT_C_COMMAND "fd --type directory --hidden"
 
-bind \cf "fd --type directory --hidden | fzf"
+function _fzf_cd
+   set --local TARGET_DIR (fd --type directory --hidden | fzf) && cd $TARGET_DIR && printf $TARGET_DIR
+end
+
+bind \ct _fzf_cd
