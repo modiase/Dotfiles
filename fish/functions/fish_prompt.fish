@@ -44,7 +44,7 @@ function fish_prompt
 
     # Displaying a marker in case the repository isn't clean
     if git_is_touched
-      echo -n -s $color_yellow $dirty $color_off " "
+      echo -n -s $color_yellow $dirty $color_off
    # else
    #   echo -n -s " "
     end
