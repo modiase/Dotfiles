@@ -52,7 +52,9 @@ function fish_prompt
    # # Displaying the branch name
    # echo -n -s $color_dim (git_branch_name) $color_off " "
    # # Displaying information about the branch status
-  echo -n -s $color_green (git_ahead $ahead $behind $diverged $none) $color_off " "
+  set -l git_ahead_symbol (git_ahead $ahead $behind $diverged $none)
+  echo -n -s $color_green $git_ahead_symbol  $color_off
+  test -n $git_ahead_symbol || git_is_touched && echo -n " "
 
    # # Ending the display :)
    # echo -n -s $color_pink ")" $color_off " "
