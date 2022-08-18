@@ -27,48 +27,45 @@ function fish_prompt
 
   # Displaying useful information in case of browsing a Git repository
   if git_is_repo
-    # Displaying the path we're at using short path by default.
-    # Particular treatment in case of browsing a Git repository.
-    set root_folder (command git rev-parse --show-toplevel 2>/dev/null)
-    set parent_root_folder (dirname $root_folder)
-    set cwd (echo $PWD | sed -e "s|$parent_root_folder/||")
-    echo -n -s $color_blue "("$color_dim $cwd $color_blue")" $color_off " "
+   # # Displaying the path we're at using short path by default.
+   # # Particular treatment in case of browsing a Git repository.
+   # set root_folder (command git rev-parse --show-toplevel 2>/dev/null)
+   # set parent_root_folder (dirname $root_folder)
+   # set cwd (echo $PWD | sed -e "s|$parent_root_folder/||")
+   # echo -n -s $color_blue "("$color_dim $cwd $color_blue")" $color_off " "
 
-    # Writing an indication in case there's some stashed content in the repository
-    if git_is_stashed
-      echo -n -s $color_purple $stashed $color_off
-    end
+   # # Writing an indication in case there's some stashed content in the repository
+   # if git_is_stashed
+   #   echo -n -s $color_purple $stashed $color_off
+   # end
 
-    # Starting displaying information about the current branch
-    echo -n -s $color_pink "(" $color_off
+   # # Starting displaying information about the current branch
+   # echo -n -s $color_pink "(" $color_off
 
     # Displaying a marker in case the repository isn't clean
     if git_is_touched
       echo -n -s $color_yellow $dirty $color_off " "
-    else
-      echo -n -s " "
+   # else
+   #   echo -n -s " "
     end
 
-    # Displaying the branch name
-    echo -n -s $color_dim (git_branch_name) $color_off " "
-    # Displaying information about the branch status
-    echo -n -s $color_green (git_ahead $ahead $behind $diverged $none) $color_off
+   # # Displaying the branch name
+   # echo -n -s $color_dim (git_branch_name) $color_off " "
+   # # Displaying information about the branch status
+  echo -n -s $color_green (git_ahead $ahead $behind $diverged $none) $color_off " "
 
-    # Ending the display :)
-    echo -n -s $color_pink ")" $color_off " "
+   # # Ending the display :)
+   # echo -n -s $color_pink ")" $color_off " "
 
   else
-    # Displaying the path we're at using short path by default.
     set cwd (basename (prompt_pwd))
-    echo -n -s $color_blue "("$color_dim $cwd $color_blue")" $color_off " "
+    # echo -n -s $color_blue "("$color_dim $cwd $color_blue")" $color_off " "
   end
 
-  # Finally display the prompt symbols
   for color in $last_status_colors
     echo -n (set_color $color)">"
   end
 
-  # And one last space. It does everything.
   echo -n -s " " $color_off
 
 end
