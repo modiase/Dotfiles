@@ -35,7 +35,19 @@ set -gx FZF_DEFAULT_OPTS "--height 40% --layout=reverse --extended $FZF_THEME"
 set -gx FZF_DEFAULT_COMMAND "rg --files --follow --no-ignore-vcs --hidden -g \"!{**/node_modules/*,**/.git/*}\" 2>/dev/null"
 
 function _fzf_cd
-   set --local TARGET_DIR (fd --type directory --hidden | fzf) && cd $TARGET_DIR && printf $TARGET_DIR
+
+  if git_is_repo
+      set --function root_folder (command git rev-parse --show-toplevel 2>/dev/null)
+  else
+      set --function root_folder .
+  end
+  set --function TARGET_DIR (fd . $root_folder --type directory --hidden | fzf)
+
+   if test $status -eq 0
+        cd $TARGET_DIR && echo $TARGET_DIR
+    end
+    fish_prompt
+
 end
 
 bind \ct _fzf_cd
