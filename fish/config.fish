@@ -9,4 +9,3 @@ set -gx TERM "alacritty"
 set -gx DOTFILES "$HOME/Dotfiles"
 
 test -f $HOME/Dotfiles/fish/config.local.fish && source $HOME/Dotfiles/fish/config.local.fish
-

@@ -35,7 +35,6 @@ set -gx FZF_DEFAULT_OPTS "--height 40% --layout=reverse --extended $FZF_THEME"
 set -gx FZF_DEFAULT_COMMAND "rg --files --follow --no-ignore-vcs --hidden -g \"!{**/node_modules/*,**/.git/*}\" 2>/dev/null"
 
 function _fzf_cd
-
   if git_is_repo
       set --function root_folder (command git rev-parse --show-toplevel 2>/dev/null)
   else

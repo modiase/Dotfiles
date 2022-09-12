@@ -28,5 +28,6 @@
     "D": "delete",
     "ma": "addFile",
     "mA": "addDirectory"
-  }
+  },
+  "snippets.ultisnips.enable": false
 }
