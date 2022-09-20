@@ -1,5 +1,5 @@
 source ~/Dotfiles/nvim/plugins/airline.vim
-source ~/Dotfiles/nvim/plugins/barbar.vim
+source ~/Dotfiles/nvim/plugins/bufferline.lua
 source ~/Dotfiles/nvim/plugins/blamer.vim
 source ~/Dotfiles/nvim/plugins/coc.vim
 source ~/Dotfiles/nvim/plugins/dashboard.lua
