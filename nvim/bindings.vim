@@ -11,5 +11,3 @@ nnoremap <silent> <leader>gp :b#<CR>
 " Managing files
 " Copy full filepath into register
 nmap <silent> cp :let @" = expand("%:p")<CR>
-
-

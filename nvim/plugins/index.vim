@@ -4,8 +4,8 @@ source ~/Dotfiles/nvim/plugins/blamer.vim
 source ~/Dotfiles/nvim/plugins/coc.vim
 source ~/Dotfiles/nvim/plugins/dashboard.lua
 source ~/Dotfiles/nvim/plugins/git-conflict.lua
+source ~/Dotfiles/nvim/plugins/nvim-tmux-navigation.vim
 source ~/Dotfiles/nvim/plugins/telescope.vim
-source ~/Dotfiles/nvim/plugins/theme.vim
 source ~/Dotfiles/nvim/plugins/vim-bbye.vim
 source ~/Dotfiles/nvim/plugins/vim-rooter.vim
 source ~/Dotfiles/nvim/plugins/which-key.vim
