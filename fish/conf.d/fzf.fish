@@ -40,7 +40,7 @@ function _fzf_cd
   else
       set --function root_folder .
   end
-  set --function TARGET_DIR (fd . $root_folder --type directory --hidden | fzf)
+  set --function TARGET_DIR (fd . $root_folder --type directory | cat (echo $root_folder | psub) - | fzf)
 
    if test $status -eq 0
         cd $TARGET_DIR && echo $TARGET_DIR
