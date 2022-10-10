@@ -6,6 +6,7 @@ set smarttab
 set mouse=a
 set updatetime=300
 set termguicolors
+set textwidth=80
 syntax on
 
 source ~/Dotfiles/nvim/bindings.vim
