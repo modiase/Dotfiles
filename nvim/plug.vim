@@ -24,5 +24,6 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'akinsho/git-conflict.nvim'
 Plug 'simeji/winresizer'
 Plug 'f-person/git-blame.nvim'
+Plug 'numToStr/Comment.nvim'
 
 call plug#end()

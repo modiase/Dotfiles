@@ -2,6 +2,7 @@ source ~/Dotfiles/nvim/plugins/airline.vim
 source ~/Dotfiles/nvim/plugins/bufferline.lua
 source ~/Dotfiles/nvim/plugins/blamer.vim
 source ~/Dotfiles/nvim/plugins/coc.vim
+source ~/Dotfiles/nvim/plugins/comment.lua
 source ~/Dotfiles/nvim/plugins/dashboard.lua
 source ~/Dotfiles/nvim/plugins/git-conflict.lua
 source ~/Dotfiles/nvim/plugins/nvim-tmux-navigation.vim
