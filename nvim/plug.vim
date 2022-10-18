@@ -25,5 +25,6 @@ Plug 'akinsho/git-conflict.nvim'
 Plug 'simeji/winresizer'
 Plug 'f-person/git-blame.nvim'
 Plug 'numToStr/Comment.nvim'
+Plug 'psliwka/vim-smoothie'
 
 call plug#end()
