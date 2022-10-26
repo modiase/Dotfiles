@@ -13,9 +13,8 @@ syntax on
 
 source ~/Dotfiles/nvim/bindings.vim
 source ~/Dotfiles/nvim/functions.vim
-source ~/Dotfiles/nvim/plug.vim
-source ~/Dotfiles/nvim/theme.vim
 source ~/Dotfiles/nvim/plugins/index.vim
+source ~/Dotfiles/nvim/theme.vim
 
 let g:mapleader="\<Space>"
 
