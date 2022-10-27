@@ -41,3 +41,4 @@ source ~/Dotfiles/nvim/plugins/telescope.vim
 source ~/Dotfiles/nvim/plugins/vim-bbye.vim
 source ~/Dotfiles/nvim/plugins/vim-rooter.vim
 source ~/Dotfiles/nvim/plugins/which-key.vim
+source ~/Dotfiles/nvim/plugins/winresizer.vim

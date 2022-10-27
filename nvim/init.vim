@@ -16,5 +16,4 @@ source ~/Dotfiles/nvim/functions.vim
 source ~/Dotfiles/nvim/plugins/index.vim
 source ~/Dotfiles/nvim/theme.vim
 
-let g:mapleader="\<Space>"
 
