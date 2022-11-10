@@ -7,6 +7,8 @@ nnoremap <silent> . :bnext<CR>
 nnoremap <silent> , :bprev<CR>
 " Go back to the last buffer which was active before the current one
 nnoremap <silent> <leader>gp :b#<CR>
+" Close all buffers
+nnoremap <silent> <leader>X :bufdo bd<CR>:Dashboard<CR>
 
 " Managing files
 " Copy full filepath into register
