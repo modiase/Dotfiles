@@ -11,5 +11,5 @@ nnoremap <silent> <leader>gp :b#<CR>
 nnoremap <silent> <leader>X :bufdo bd<CR>:Dashboard<CR>
 
 " Managing files
-" Copy full filepath into register
-nmap <silent> cp :let @" = expand("%:p")<CR>
+" Copy full filepath into system clipboard
+nmap <silent> cp :let @+ = expand("%:p")<CR>
