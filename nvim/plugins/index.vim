@@ -29,16 +29,10 @@ Plug 'psliwka/vim-smoothie'
 
 call plug#end()
 
-source ~/Dotfiles/nvim/plugins/airline.vim
-source ~/Dotfiles/nvim/plugins/bufferline.lua
-source ~/Dotfiles/nvim/plugins/blamer.vim
-source ~/Dotfiles/nvim/plugins/coc.vim
-source ~/Dotfiles/nvim/plugins/comment.lua
-source ~/Dotfiles/nvim/plugins/dashboard.lua
-source ~/Dotfiles/nvim/plugins/git-conflict.lua
-source ~/Dotfiles/nvim/plugins/nvim-tmux-navigation.vim
-source ~/Dotfiles/nvim/plugins/telescope.vim
-source ~/Dotfiles/nvim/plugins/vim-bbye.vim
-source ~/Dotfiles/nvim/plugins/vim-rooter.vim
-source ~/Dotfiles/nvim/plugins/which-key.vim
-source ~/Dotfiles/nvim/plugins/winresizer.vim
+let plugin_config_paths = globpath('~/Dotfiles/nvim/plugins', '*.vim', 'index.vim',1) + globpath('~/Dotfiles/nvim/plugins', '*.lua', 1,1)
+for path in plugin_config_paths	
+	if match(path, 'index.vim') == -1
+		exec "source " . path	
+	endif
+endfor
+
