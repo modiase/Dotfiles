@@ -5,6 +5,7 @@ tap "homebrew/core"
 
 brew "awscli"
 brew "bat"
+brew "binutils"
 brew "coreutils"
 brew "fd"
 brew "fish"
