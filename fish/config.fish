@@ -9,4 +9,8 @@ set -gx TERM "alacritty"
 set -gx DOTFILES "$HOME/Dotfiles"
 
 test -f $HOME/Dotfiles/fish/config.local.fish && source $HOME/Dotfiles/fish/config.local.fish
-pyenv init - | source
+
+# pnpm
+set -gx PNPM_HOME "/Users/moye/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end

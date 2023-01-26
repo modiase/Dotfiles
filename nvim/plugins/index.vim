@@ -26,6 +26,7 @@ Plug 'simeji/winresizer'
 Plug 'f-person/git-blame.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'psliwka/vim-smoothie'
+Plug 'petobens/poet-v'
 
 call plug#end()
 
