@@ -127,8 +127,12 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 nnoremap <silent> <space>ee :CocCommand explorer --focus --position floating<CR>
 nnoremap <silent> <space>ef :CocCommand explorer --focus --position floating --no-toggle<CR>
 
+nnoremap <silent> <leader>en :call CocAction('diagnosticNext')<CR>
+nnoremap <silent> <leader>ep :call CocAction('diagnosticPrevious')<CR>
+
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-snippets' ]
 let g:coc_global_extensions += ['coc-explorer', 'coc-pyright', 'coc-vimlsp' ]
 let g:coc_global_extensions += ['coc-prettier', 'coc-clangd', 'coc-lit-html' ]
 let g:coc_global_extensions += ['coc-sh', 'coc-emmet', 'coc-html', 'coc-css']
 let g:coc_global_extensions += ['coc-lua', 'coc-eslint']
+
