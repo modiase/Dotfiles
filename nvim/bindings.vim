@@ -8,7 +8,7 @@ nnoremap <silent> , :bprev<CR>
 " Go back to the last buffer which was active before the current one
 nnoremap <silent> <leader>gp :b#<CR>
 " Close all buffers
-nnoremap <silent> <leader>X :bufdo bd<CR>:Dashboard<CR>
+nnoremap <silent> <leader>C :bufdo bd<CR>:Dashboard<CR>
 
 " Managing files
 " Copy full filepath into system clipboard
