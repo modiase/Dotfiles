@@ -132,7 +132,7 @@ nnoremap <silent> <leader>ep :call CocAction('diagnosticPrevious')<CR>
 
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-snippets' ]
 let g:coc_global_extensions += ['coc-explorer', 'coc-pyright', 'coc-vimlsp' ]
-let g:coc_global_extensions += ['coc-prettier', 'coc-clangd', 'coc-lit-html' ]
+let g:coc_global_extensions += ['coc-prettier', 'coc-clangd']
 let g:coc_global_extensions += ['coc-sh', 'coc-emmet', 'coc-html', 'coc-css']
 let g:coc_global_extensions += ['coc-lua', 'coc-eslint']
 

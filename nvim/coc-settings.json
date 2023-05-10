@@ -1,13 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "markdown",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "graphql"
-  ],
+  "coc.preferences.formatOnSave": true,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "explorer.width": 40,
@@ -29,5 +21,7 @@
     "ma": "addFile",
     "mA": "addDirectory"
   },
-  "snippets.ultisnips.enable": false
+  "snippets.ultisnips.enable": false,
+  "tsserver.maxTsServerMemory": 8192,
+  "tsserver.log": "normal"
 }

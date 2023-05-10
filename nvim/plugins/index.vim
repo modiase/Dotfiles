@@ -27,6 +27,8 @@ Plug 'f-person/git-blame.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'psliwka/vim-smoothie'
 Plug 'petobens/poet-v'
+Plug 'Shatur/neovim-session-manager'
+Plug 'mhanberg/output-panel.nvim'
 
 call plug#end()
 
