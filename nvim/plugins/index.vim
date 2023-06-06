@@ -29,6 +29,8 @@ Plug 'psliwka/vim-smoothie'
 Plug 'petobens/poet-v'
 Plug 'Shatur/neovim-session-manager'
 Plug 'mhanberg/output-panel.nvim'
+Plug 'ThePrimeagen/refactoring.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
