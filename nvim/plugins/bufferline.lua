@@ -8,10 +8,11 @@ local buffer_bg = nord0
 local buffer_bg_selected = nord1
 local buffer_bg_visible = "#2A2F3A"
 
-require("bufferline").setup{
-  options = { 
-    diagnostics = "coc"
+require("bufferline").setup {
+  options = {
+    diagnostics = "coc",
+    name_formatter = function(buf)
+      return buf.name
+    end
   }
 }
-
-
