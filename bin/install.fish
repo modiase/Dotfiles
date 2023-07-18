@@ -34,7 +34,7 @@ end
 
 function install_fish_plugins
 	fisher list | grep \^patrickf1/fzf.fish\$ &>/dev/null; and debug "fzf fish already installed"; or fisher install patrickf1/fzf.fish &>/dev/null
-	fisher list | grep \^bass\$ &>/dev/null; and debug "fzf fish already installed"; or fisher install edc/bass &>/dev/null
+	fisher list | grep \^bass\$ &>/dev/null; and debug "bass already installed"; or fisher install edc/bass &>/dev/null
 end
 
 function install_vim_plug

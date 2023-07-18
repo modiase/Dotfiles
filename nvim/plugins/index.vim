@@ -11,7 +11,7 @@ Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-rhubarb'
-Plug 'alexghergh/nvim-tmux-navigation'
+Plug 'aserowy/tmux.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'glepnir/dashboard-nvim'
 Plug 'folke/which-key.nvim'
