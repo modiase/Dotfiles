@@ -28,7 +28,7 @@ function install_fisher
 		debug "fisher already installed"
 	else
 		debug "installing fisher"
-		curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+		curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher &>/dev/null
 	end
 end
 
