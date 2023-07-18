@@ -1,5 +1,3 @@
-# Harleen Theme. Made with <3.
-
 function fish_prompt
   # Retrieving status of last command
   # Directly using it to set colors for displaying prompt symbols

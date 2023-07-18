@@ -5,12 +5,13 @@ end
 
 fish_user_key_bindings
 
-set -gx TERM "alacritty"
 set -gx DOTFILES "$HOME/Dotfiles"
+set -U fish_greeting ""
 
-test -f $HOME/Dotfiles/fish/config.local.fish && source $HOME/Dotfiles/fish/config.local.fish
 
-# pnpm
-set -gx PNPM_HOME "/Users/moye/Library/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
-# pnpm end
+test -f "$HOME/.nix-profile/etc/profile.d/nix.sh";\
+    and bass "source $HOME/.nix-profile/etc/profile.d/nix.sh";
+
+bass $HOME/Dotfiles/git/aliases
+test -f $HOME/Dotfiles/fish/config.local.fish; and source $HOME/Dotfiles/fish/config.local.fish
+
