@@ -111,7 +111,8 @@ install_nix(){
 
 
 install_fish(){
-	nix-env -iA nixpkgs.fish
+	debug "Installing fish shell"
+	nix-env -iA nixpkgs.fish &>/dev/null
 }
 
 
