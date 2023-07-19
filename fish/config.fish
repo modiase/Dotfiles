@@ -33,10 +33,11 @@ set -gx DOTFILES "$HOME/Dotfiles"
 test -f "$HOME/.nix-profile/etc/profile.d/nix.sh";\
     and bass "source $HOME/.nix-profile/etc/profile.d/nix.sh";
 
-test -f "$HOME/.nix-profile/etc/profile.d/nix.sh";\
-    and bass "source $HOME/.nix-profile/etc/profile.d/nix.sh";\
-    or test -f '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh';\
-    and bass 'source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+if test -f "$HOME/.nix-profile/etc/profile.d/nix.sh"
+    bass "source $HOME/.nix-profile/etc/profile.d/nix.sh"
+else if test -f '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+    bass 'source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+end
 
 test -f $HOME/.config/fish/config.local.fish; and source $HOME/.config/fish/config.local.fish
 
