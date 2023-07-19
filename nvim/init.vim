@@ -10,7 +10,7 @@ set nowrap
 set listchars=extends:>,precedes:<
 
 syntax on
-set termguicolors
+set termguicolors notermguicolors
 
 source ~/Dotfiles/nvim/bindings.vim
 source ~/Dotfiles/nvim/functions.vim
