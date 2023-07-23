@@ -1,3 +1,4 @@
+set EXIT_FAILURE 1
 function debug
 	if [ $DEBUG -gt 0 ]
 		echo $argv
@@ -5,7 +6,12 @@ function debug
 end
 
 function exit_on_failed_command --on-event command-failed
-    exit
+    exit $EXIT_FAILURE
+end
+
+function fail -a reason
+	echo $reason >&2
+	exit $EXIT_FAILURE
 end
 
 function mkbackup -a node
