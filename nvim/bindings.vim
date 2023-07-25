@@ -9,6 +9,10 @@ nnoremap <silent> - :bprev<CR>
 nnoremap <silent> <leader>gp :b#<CR>
 " Close all buffers
 nnoremap <silent> <leader>C :bufdo bd<CR>:Dashboard<CR>
+" Yank to clipboard with leader
+noremap <silent> <leader>y "+y<CR>
+" Cut to clipboard with leader
+noremap <silent> <leader>d "+d<CR>
 
 " Managing files
 " Copy full filepath into system clipboard
