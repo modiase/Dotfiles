@@ -41,3 +41,5 @@ end
 
 test -f $HOME/.config/fish/config.local.fish; and source $HOME/.config/fish/config.local.fish
 
+alias ls exa
+
