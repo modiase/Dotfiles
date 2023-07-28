@@ -1,6 +1,7 @@
 # Useful functions
 #!/bin/sh
 
+EXIT_FAILURE=1
 check(){
 	local CMD="$1"
 	command -v "${CMD}" &>/dev/null && printf "1" || printf "0"
@@ -30,7 +31,7 @@ get_profile_file(){
 			;;
 		*)
 			perror "Unsupported platform"
-			exit 1
+			exit $EXIT_FAILURE
 			;;
 	esac
 	
@@ -44,7 +45,7 @@ get_rc_file(){
 			;;
 		*)
 			perror "Unsupported platform"
-			exit 1
+			exit $EXIT_FAILURE
 			;;
 	esac
 }

@@ -64,6 +64,6 @@ else if command -v sha1sum &>/dev/null
 	set SHASUM "sha1sum"
 else
 	echo "Unable to find suitable hash function"
-	exit 1
+	exit $EXIT_FAILURE
 end
 
