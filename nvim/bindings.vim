@@ -19,6 +19,9 @@ noremap <silent> <leader>d "+d<CR>
 nmap <silent> cp :let @+ = expand("%:p")<CR>
 nnoremap <silent> <leader><leader> :noh<CR>
 
+" Centerpad
+nnoremap <silent><leader>z <cmd>lua require'centerpad'.toggle { leftpad = math.floor(vim.api.nvim_win_get_width(0)/(1+math.sqrt(5))), rightpad = math.floor(vim.api.nvim_win_get_width(0)/(1+math.sqrt(5))) }<CR>
+
 function! MarkWindowSwap()
     let g:markedWinNum = winnr()
 endfunction

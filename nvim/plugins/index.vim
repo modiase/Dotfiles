@@ -31,6 +31,7 @@ Plug 'Shatur/neovim-session-manager'
 Plug 'mhanberg/output-panel.nvim'
 Plug 'ThePrimeagen/refactoring.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'smithbm2316/centerpad.nvim'
 
 call plug#end()
 
