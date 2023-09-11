@@ -56,7 +56,7 @@ font:
     family: "Iosevka Nerd Font"
   italic:
     family: "Iosevka Nerd Font"
-  size: 10.0
+  size: 12.0
 
 key_bindings:
   - { key: Key0, mods: Alt, chars: "º" }
