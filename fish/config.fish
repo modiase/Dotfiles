@@ -40,6 +40,3 @@ else if test -f '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 end
 
 test -f $HOME/.config/fish/config.local.fish; and source $HOME/.config/fish/config.local.fish
-
-alias ls exa
-
