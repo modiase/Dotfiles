@@ -136,3 +136,4 @@ let g:coc_global_extensions += ['coc-prettier', 'coc-clangd']
 let g:coc_global_extensions += ['coc-sh', 'coc-emmet', 'coc-html', 'coc-css']
 let g:coc_global_extensions += ['coc-lua', 'coc-eslint']
 
+nnoremap <silent> <leader>cc :CocLocalConfig<cr>
