@@ -53,7 +53,14 @@ end
 
 function configure_login_shell
 	set -f FISH_BIN_PATH "$HOME/.nix-profile/bin/fish"
+	set -f SOURCE_NIX "test -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh && source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
 	if test (echo $SHELL | rg "zsh")
+
+
+		if not test -f "$HOME/.zshrc"; or not test (rg "$SOURCE_NIX" "$HOME/.zshrc")
+			set -l TMP (mktemp) && cat ~/.zshrc > $TMP
+			cat (echo "$SOURCE_NIX" | psub) $TMP > "$HOME/.zshrc"
+		end
 
 		if not test -f "$HOME/.zshrc"; or not test (rg "exec $FISH_BIN_PATH" "$HOME/.zshrc")
 			echo "exec $FISH_BIN_PATH" >> "$HOME/.zshrc"
@@ -64,6 +71,11 @@ function configure_login_shell
 		end
 
 	else if test (echo $SHELL | rg "bash")
+
+		if not test -f "$HOME/.bashrc"; or not test (rg "$SOURCE_NIX" "$HOME/.bashrc")
+			set -l TMP (mktemp) && cat ~/.bashrc > $TMP
+			cat (echo "$SOURCE_NIX" | psub) $TMP > "$HOME/.bashrc"
+		end
 		
 		if not test -f "$HOME/.bashrc"; or not test (rg "exec $FISH_BIN_PATH" "$HOME/.bashrc")
 			echo "exec $FISH_BIN_PATH" >> "$HOME/.bashrc"
