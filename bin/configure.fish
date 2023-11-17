@@ -15,7 +15,7 @@ source "$SCRIPT_DIR/lib.fish"
 
 function configure_fish
 	softreplace "$ROOT_DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
-	for f in (find "$ROOT_DIR/fish/functions" -type f -maxdepth 1 -name "*.fish")
+	for f in (find "$ROOT_DIR/fish/functions" -maxdepth 1 -type f -name "*.fish")
 		set -l base (basename "$f")
 		softreplace "$f" "$HOME/.config/fish/functions/$base"
 	end
