@@ -43,3 +43,7 @@ endfunction
 
 nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
+
+" Insert literal tab
+inoremap <silent> <S-Tab> <C-V><Tab><CR> 
+
