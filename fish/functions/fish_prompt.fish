@@ -23,6 +23,9 @@ function fish_prompt
   set -l dirty    "*"
   set -l none     ""
 
+  if set -q fish_prompt_prefix
+    echo -n $fish_prompt_prefix " "
+  end
   # Displaying useful information in case of browsing a Git repository
   if git_is_repo
    # # Displaying the path we're at using short path by default.
