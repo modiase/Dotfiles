@@ -32,6 +32,7 @@ Plug 'mhanberg/output-panel.nvim'
 Plug 'ThePrimeagen/refactoring.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'smithbm2316/centerpad.nvim'
+Plug 'dhruvasagar/vim-buffer-history'
 
 call plug#end()
 
