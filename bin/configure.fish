@@ -24,19 +24,19 @@ end
 function configure_alacritty
 	mkdir -p "$HOME/.config/alacritty"
 	set -f ESCAPED_SHELL (printf $SHELL | sed -e 's/[\/]/\\\\\//g')
-	set -f ALACRITTY_YML (mktemp)
-	cat "$ROOT_DIR/alacritty/template.alacritty.yml" | sed -e "s/<<SHELL>>/$ESCAPED_SHELL/g" > "$ALACRITTY_YML"
-	if test -f "$HOME/.config/alacritty/alacritty.yml"
-		if not test (cat "$HOME/.config/alacritty/alacritty.yml" | $SHASUM) = (cat $ALACRITTY_YML | $SHASUM)
-			debug "Generating alacritty.yml"
-			mkbackup "$HOME/.config/alacritty/alacritty.yml"
-			mv "$ALACRITTY_YML" "$HOME/.config/alacritty/alacritty.yml"
+	set -f TMP_ALACRITTY_CONFIG_FILEPATH (mktemp)
+	cat "$ROOT_DIR/alacritty/template.alacritty.toml" | sed -e "s/<<SHELL>>/$ESCAPED_SHELL/g" > "$TMP_ALACRITTY_CONFIG_FILEPATH"
+	if test -f "$HOME/.config/alacritty/alacritty.toml"
+		if not test (cat "$HOME/.config/alacritty/alacritty.toml" | $SHASUM) = (cat $TMP_ALACRITTY_CONFIG_FILEPATH | $SHASUM)
+			debug "Generating alacritty.toml"
+			mkbackup "$HOME/.config/alacritty/alacritty.toml"
+			mv "$TMP_ALACRITTY_CONFIG_FILEPATH" "$HOME/.config/alacritty/alacritty.toml"
 		end
 	else
-		debug "Generating alacritty.yml"
-		mv "$ALACRITTY_YML" "$HOME/.config/alacritty/alacritty.yml"
+		debug "Generating alacritty.toml"
+		mv "$TMP_ALACRITTY_CONFIG_FILEPATH" "$HOME/.config/alacritty/alacritty.toml"
 	end
-	rm -f "$ALACRITTY_YML"
+	rm -f "$TMP_ALACRITTY_CONFIG_FILEPATH"
 end
 
 function configure_nvim
