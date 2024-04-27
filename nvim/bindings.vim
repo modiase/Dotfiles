@@ -47,3 +47,6 @@ nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 " Insert literal tab
 inoremap <silent> <S-Tab> <C-V><Tab><CR> 
 
+noremap <silent> <leader>k :close<CR>
+noremap <silent> <leader>K :close!<CR>
+
