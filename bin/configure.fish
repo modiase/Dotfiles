@@ -43,6 +43,10 @@ function configure_nvim
 	softreplace "$ROOT_DIR/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 end
 
+function configure_coc
+	softreplace "$ROOT_DIR/nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
+end
+
 function configure_tmux
 	softreplace "$ROOT_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 end
