@@ -106,6 +106,8 @@ configure_alacritty
 
 configure_nvim
 
+configure_coc
+
 configure_nix
 
 configure_tmux
