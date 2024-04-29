@@ -3,11 +3,6 @@
 # Applications 
 cmd + shift - b : open -a "Google Chrome"
 cmd + shift - c : open -a "Alacritty"
-cmd + shift - n : open -a "Notion"
-cmd + shift - a : open -a "Anki"
-cmd + shift - m : open -a "Gmail"
-cmd + shift - s : open -a "Slack"
-cmd + shift - l : open -a "Todoist"
 cmd + shift - d : open ~/Downloads/
 
 # change window focus within space
@@ -87,3 +82,4 @@ shift + cmd - s : yabai -m window --resize bottom:0:-20
 shift + cmd - w : yabai -m window --resize top:0:20
 shift + cmd - d : yabai -m window --resize right:-20:0
 
+.load "./skhdrc.local"
