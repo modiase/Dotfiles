@@ -9,11 +9,12 @@ with import <nixpkgs> {};
   jq 
   neovim 
   nodejs 
-  poetry 
   pstree 
+  poetry
   ripgrep 
   tldr 
   tmux 
+  tree
   nodePackages.pnpm 
   nodePackages.ts-node 
   nodePackages.typescript 
