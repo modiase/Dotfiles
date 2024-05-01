@@ -1,3 +1,12 @@
+function FullPathCp()
+	-- Get the full path of the current file
+	local abs_path = vim.fn.expand('%:p')
+	print(abs_path)
+	vim.fn.setreg('+', abs_path, c)
+end
+
+vim.api.nvim_set_keymap('n', 'cp', ':lua FullPathCp()<CR>', { noremap = true })
+
 function GitAwareCp()
 	-- Get the full path of the current file
 	local file_path = vim.fn.expand('%:p')

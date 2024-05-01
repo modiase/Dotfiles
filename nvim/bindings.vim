@@ -15,8 +15,6 @@ noremap <silent> <leader>y "+y<CR>
 noremap <silent> <leader>d "+d<CR>
 
 " Managing files
-" Copy full filepath into system clipboard
-nmap <silent> cp :let @+ = expand("%:p")<CR>
 nnoremap <silent> <leader><leader> :noh<CR>
 
 " Centerpad
