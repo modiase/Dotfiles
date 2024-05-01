@@ -14,6 +14,7 @@ set termguicolors notermguicolors
 
 source ~/Dotfiles/nvim/bindings.vim
 source ~/Dotfiles/nvim/functions.vim
+source ~/Dotfiles/nvim/functions.lua
 source ~/Dotfiles/nvim/plugins/index.vim
 source ~/Dotfiles/nvim/theme.vim
 
