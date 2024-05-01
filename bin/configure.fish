@@ -66,8 +66,8 @@ function configure_login_shell
 			cat (echo "$SOURCE_NIX" | psub) $TMP > "$HOME/.zshrc"
 		end
 
-		if not test -f "$HOME/.zshrc"; or not test (rg "exec $FISH_BIN_PATH" "$HOME/.zshrc")
-			echo "exec $FISH_BIN_PATH" >> "$HOME/.zshrc"
+		if not test -f "$HOME/.zshrc"; or not test (rg "test -f $FISH_BIN_PATH && exec $FISH_BIN_PATH" "$HOME/.zshrc")
+			echo "test -f $FISH_BIN_PATH && exec $FISH_BIN_PATH" >> "$HOME/.zshrc"
 		end
 
 		if not test -f "$HOME/.zprofile"; or not test (rg "source $HOME/.zshrc" "$HOME/.zprofile")
