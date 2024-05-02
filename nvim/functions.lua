@@ -35,7 +35,7 @@ end
 vim.api.nvim_set_keymap('n', 'gcp', ':lua GitAwareCp()<CR>', { noremap = true })
 
 function TelescopeWordUnderCursor()
-	require('telescope.builtin').grep_string({ search = vim.fn.input(vim.fn.expand("<cword>")) })
+	require('telescope.builtin').grep_string()
 end
 
 vim.api.nvim_set_keymap('n', '<leader>fw', ':lua TelescopeWordUnderCursor()<CR>', { noremap = true })
