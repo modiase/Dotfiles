@@ -3,6 +3,7 @@
 # Applications 
 cmd + shift - b : open -a "Google Chrome"
 cmd + shift - c : open -a "Alacritty"
+cmd + shift - u : open -a "Spotify"
 cmd + shift - d : open ~/Downloads/
 
 # change window focus within space
