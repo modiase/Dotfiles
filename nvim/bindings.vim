@@ -48,3 +48,6 @@ inoremap <silent> <S-Tab> <C-V><Tab><CR>
 noremap <silent> <leader>k :close<CR>
 noremap <silent> <leader>K :close!<CR>
 
+noremap <silent> <leader>ww :vs<CR>
+noremap <silent> <leader>ws :sp<CR>
+
