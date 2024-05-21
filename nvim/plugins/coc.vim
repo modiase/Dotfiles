@@ -50,7 +50,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gs :sp<CR><C-j> <Plug>(coc-definition)
 nmap <silent> gv :vs<CR><C-l> <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gx :sp<CR><C-j> <Plug>(coc-type-definition)
+nmap <silent> gx :vs<CR><C-l> <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
