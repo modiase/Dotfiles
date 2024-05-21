@@ -1,4 +1,3 @@
-
 set EXIT_FAILURE 1
 
 function on_exit --on-event fish_exit
@@ -12,6 +11,10 @@ end
 set SCRIPT_DIR (cd (dirname (status -f)); and pwd) 
 set ROOT_DIR (cd (dirname $SCRIPT_DIR); and pwd) 
 source "$SCRIPT_DIR/lib.fish"
+
+function configure_git
+	$ROOT_DIR/git/git-config
+end
 
 function configure_fish
 	softreplace "$ROOT_DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
@@ -99,6 +102,8 @@ function configure_vim_plugins
 	debug "Installing vim plugins"
 	nvim --headless +PlugInstall +q &>/dev/null &
 end
+
+configure_git
 
 configure_fish
 
