@@ -33,3 +33,68 @@ function GitAwareCp()
 end
 
 vim.api.nvim_set_keymap('n', 'gcp', ':lua GitAwareCp()<CR>', { noremap = true })
+
+function SwapWithLeftBuffer()
+	-- Get the current buffer and window ID
+	local current_win = vim.api.nvim_get_current_win()
+	local current_buf = vim.api.nvim_win_get_buf(current_win)
+
+	-- Find the total number of windows
+	local windows = vim.api.nvim_list_wins()
+	local current_index = nil
+	for i, win in ipairs(windows) do
+		if win == current_win then
+			current_index = i
+			break
+		end
+	end
+
+	-- Only swap if there is a window to the left
+	if current_index == nil or current_index == 1 then
+		print("No window to the left to swap with")
+		return
+	end
+
+	local left_win = windows[current_index - 1]
+	local left_buf = vim.api.nvim_win_get_buf(left_win)
+
+	-- Swap the buffers
+	vim.api.nvim_win_set_buf(current_win, left_buf)
+	vim.api.nvim_win_set_buf(left_win, current_buf)
+	vim.api.nvim_set_current_win(left_win)
+end
+
+-- To use this command directly in Neovim, map it to a desired keybinding:
+vim.api.nvim_set_keymap('n', '<C-w><C-h>', ':lua SwapWithLeftBuffer()<CR>', { noremap = true, silent = true })
+
+function SwapWithRightBuffer()
+	-- Get the current buffer and window ID
+	local current_win = vim.api.nvim_get_current_win()
+	local current_buf = vim.api.nvim_win_get_buf(current_win)
+
+	-- Find the total number of windows
+	local windows = vim.api.nvim_list_wins()
+	local current_index = nil
+	for i, win in ipairs(windows) do
+		if win == current_win then
+			current_index = i
+			break
+		end
+	end
+
+	-- Only swap if there is a window to the right
+	if current_index == nil or current_index == #windows then
+		print("No window to the right to swap with")
+		return
+	end
+
+	local right_win = windows[current_index + 1]
+	local right_buf = vim.api.nvim_win_get_buf(right_win)
+
+	-- Swap the buffers
+	vim.api.nvim_win_set_buf(current_win, right_buf)
+	vim.api.nvim_win_set_buf(right_win, current_buf)
+	vim.api.nvim_set_current_win(right_win)
+end
+
+vim.api.nvim_set_keymap('n', '<C-w><C-l>', ':lua SwapWithRightBuffer()<CR>', { noremap = true, silent = true })
