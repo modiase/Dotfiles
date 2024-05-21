@@ -13,7 +13,7 @@ set ROOT_DIR (cd (dirname $SCRIPT_DIR); and pwd)
 source "$SCRIPT_DIR/lib.fish"
 
 function configure_git
-	$ROOT_DIR/git/git-config
+	$ROOT_DIR/git/config.global
 end
 
 function configure_fish
