@@ -50,4 +50,5 @@ noremap <silent> <leader>K :close!<CR>
 
 noremap <silent> <leader>ww :vs<CR>
 noremap <silent> <leader>ws :sp<CR>
+noremap <silent> <leader>r :source $MYVIMRC<CR>:echo "Configuration reloaded"<CR>
 
