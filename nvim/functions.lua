@@ -98,3 +98,40 @@ function SwapWithRightBuffer()
 end
 
 vim.api.nvim_set_keymap('n', '<C-w><C-l>', ':lua SwapWithRightBuffer()<CR>', { noremap = true, silent = true })
+
+function GetWindowsDisplayingBuffer(bufnr)
+	local windows_displaying_buffer = {}
+	-- Loop over all tabpages
+	for _, tabpage in ipairs(vim.api.nvim_list_tabpages()) do
+		-- Get all windows in the current tabpage
+		local windows = vim.api.nvim_tabpage_list_wins(tabpage)
+		-- Check each window to see if it's displaying the specified buffer
+		for _, win in ipairs(windows) do
+			if vim.api.nvim_win_get_buf(win) == bufnr then
+				table.insert(windows_displaying_buffer, win)
+			end
+		end
+	end
+	return windows_displaying_buffer
+end
+
+function CloseBufferWindow(force)
+	force = force or false
+	local bufnr = vim.api.nvim_get_current_buf()
+	local winnr = vim.api.nvim_get_current_win()
+	local windows = GetWindowsDisplayingBuffer(bufnr)
+
+	if #windows == 1
+	then
+		local success, _ = pcall(vim.api.nvim_buf_delete, bufnr, { force = force })
+		if not success
+		then
+			print("Could not close window")
+		end
+	else
+		vim.api.nvim_win_close(winnr, { force = force })
+	end
+end
+
+vim.api.nvim_set_keymap('n', '<leader>x', ':lua CloseBufferWindow()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>X', ':lua CloseBufferWindow(true)<CR>', { noremap = true, silent = true })
