@@ -58,6 +58,14 @@ function configure_nix
 	softreplace "$ROOT_DIR/nix/nix.conf" "$HOME/.config/nix/nix.conf"
 end
 
+function configure_mac_only
+	if [ (uname) != "Darwin" ]
+		return
+	end
+	softreplace "$ROOT_DIR/yabai/yabairc" "$HOME/.config/yabai/yabairc"
+	softreplace "$ROOT_DIR/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"
+end
+
 function configure_login_shell
 	set -f FISH_BIN_PATH "$HOME/.nix-profile/bin/fish"
 	set -f SOURCE_NIX "test -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh && source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
@@ -120,3 +128,6 @@ configure_tmux
 configure_login_shell
 
 configure_vim_plugins
+
+configure_mac_only
+
