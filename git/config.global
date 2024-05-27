@@ -9,3 +9,4 @@ fi
 git config --global filter.lfs.required true
 git config --global commit.verbose true
 git config --global user.name Moye
+git config --global rerere.enabled true
