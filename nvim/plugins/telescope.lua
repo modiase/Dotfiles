@@ -1,3 +1,19 @@
+require('telescope').setup {
+  defaults = {
+    -- Default configuration for telescope goes here:
+    -- config_key = value,
+    mappings = {
+      n = {
+        ['<c-d>'] = require('telescope.actions').delete_buffer
+      }, -- n
+      i = {
+        ["<C-h>"] = "which_key",
+        ['<c-d>'] = require('telescope.actions').delete_buffer
+      } -- i
+    }   -- mappings
+  },    -- defaults
+  ...
+}       -- telescope setup
 -- -- Find files using Telescope command-line sugar.
 vim.api.nvim_set_keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
   { noremap = true })
