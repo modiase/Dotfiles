@@ -45,6 +45,13 @@ function install_vim_plug
        		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'; or fail "Failed to install vim-plug"
 end
 
+function install_alacritty_terminfo
+	if infocmp alacritty &>/dev/null; and infocmp alacritty-direct &>/dev/null
+		return
+	end
+	tic -xe alacritty,alacritty-direct "$ROOT_DIR/alacritty/alacritty.info"
+end
+
 install_nix_packages
 
 install_fisher
@@ -52,3 +59,5 @@ install_fisher
 install_fish_plugins
 
 install_vim_plug
+
+install_alacritty_terminfo
