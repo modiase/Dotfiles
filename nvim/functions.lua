@@ -135,8 +135,39 @@ function CloseBufferWindow(config)
 	end
 end
 
+function CloseUnopenedBuffers()
+	local buffers = vim.api.nvim_list_bufs()
+	for _, bufnr in ipairs(buffers)
+	do
+		local buffer_open_in_window_count = #GetWindowsDisplayingBuffer(bufnr)
+		if buffer_open_in_window_count < 1
+		then
+			pcall(vim.api.nvim_buf_delete, bufnr, { force = false })
+		end
+	end
+end
+
+function ResizeOtherWins(current, size)
+	for _, winnr in ipairs(vim.api.nvim_list_wins())
+	do
+		if winnr ~= current
+		then
+			vim.api.nvim_win_set_width(winnr, size)
+		end
+	end
+end
+
+function ExpandCurrentBuffer()
+	local current_win = vim.api.nvim_get_current_win()
+	vim.api.nvim_win_set_width(current_win, 140)
+end
+
 vim.api.nvim_set_keymap('n', '<leader>x', ':lua CloseBufferWindow()<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>X', ':lua CloseBufferWindow({ force = true })<CR>',
 	{ noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<leader>A', ':lua CloseUnopenedBuffers()<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<C-w><leader>', ':lua ExpandCurrentBuffer()<CR>',
+	{ noremap = true, silent = true })
