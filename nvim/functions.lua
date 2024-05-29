@@ -115,8 +115,10 @@ function GetWindowsDisplayingBuffer(bufnr)
 	return windows_displaying_buffer
 end
 
-function CloseBufferWindow(force)
-	force = force or false
+function CloseBufferWindow(config)
+	config = config or {}
+	local force = config.force or false
+
 	local bufnr = vim.api.nvim_get_current_buf()
 	local winnr = vim.api.nvim_get_current_win()
 	local windows = GetWindowsDisplayingBuffer(bufnr)
@@ -134,4 +136,7 @@ function CloseBufferWindow(force)
 end
 
 vim.api.nvim_set_keymap('n', '<leader>x', ':lua CloseBufferWindow()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>X', ':lua CloseBufferWindow(true)<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>X', ':lua CloseBufferWindow({ force = true })<CR>',
+	{ noremap = true, silent = true })
+
