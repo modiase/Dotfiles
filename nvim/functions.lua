@@ -147,18 +147,20 @@ function CloseUnopenedBuffers()
 	end
 end
 
-function ResizeOtherWins(current, size)
-	for _, winnr in ipairs(vim.api.nvim_list_wins())
-	do
-		if winnr ~= current
-		then
-			vim.api.nvim_win_set_width(winnr, size)
-		end
-	end
-end
-
 function ExpandCurrentBuffer()
 	local current_win = vim.api.nvim_get_current_win()
+	local current_win_width = vim.api.nvim_win_get_width(current_win)
+
+	vim.cmd('wincmd h')
+	local left_win = vim.api.nvim_get_current_win()
+	local left_win_width = vim.api.nvim_win_get_width(current_win)
+
+
+	if left_win ~= current_win
+	then
+		vim.api.nvim_win_set_width(left_win, left_win_width - math.floor(0.5 * (140 - current_win_width)))
+		vim.api.nvim_set_current_win(current_win)
+	end
 	vim.api.nvim_win_set_width(current_win, 140)
 end
 
