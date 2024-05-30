@@ -101,15 +101,11 @@ vim.api.nvim_set_keymap('n', '<C-w><C-l>', ':lua SwapWithRightBuffer()<CR>', { n
 
 function GetWindowsDisplayingBuffer(bufnr)
 	local windows_displaying_buffer = {}
-	-- Loop over all tabpages
-	for _, tabpage in ipairs(vim.api.nvim_list_tabpages()) do
-		-- Get all windows in the current tabpage
-		local windows = vim.api.nvim_tabpage_list_wins(tabpage)
-		-- Check each window to see if it's displaying the specified buffer
-		for _, win in ipairs(windows) do
-			if vim.api.nvim_win_get_buf(win) == bufnr then
-				table.insert(windows_displaying_buffer, win)
-			end
+	local tabpage = vim.api.nvim_get_current_tabpage()
+	local windows = vim.api.nvim_tabpage_list_wins(tabpage)
+	for _, win in ipairs(windows) do
+		if vim.api.nvim_win_get_buf(win) == bufnr then
+			table.insert(windows_displaying_buffer, win)
 		end
 	end
 	return windows_displaying_buffer
