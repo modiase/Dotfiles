@@ -15,6 +15,7 @@ with import <nixpkgs> {};
   tldr 
   tmux 
   tree
+  tshark
   nodePackages.pnpm 
   nodePackages.ts-node 
   nodePackages.typescript 
