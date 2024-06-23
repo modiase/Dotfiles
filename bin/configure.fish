@@ -52,6 +52,10 @@ end
 
 function configure_tmux
 	softreplace "$ROOT_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
+	set -l TPM_INSTALL_SCRIPT "$HOME/.tmux/plugins/tpm/bin/install_plugins"
+	if test -f "$TPM_INSTALL_SCRIPT"
+		$TPM_INSTALL_SCRIPT &>/dev/null
+	end
 end
 
 function configure_nix
