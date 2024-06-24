@@ -130,4 +130,13 @@ let g:coc_global_extensions += ['coc-prettier', 'coc-clangd']
 let g:coc_global_extensions += ['coc-sh', 'coc-emmet', 'coc-html', 'coc-css']
 let g:coc_global_extensions += ['coc-lua', 'coc-eslint']
 
+inoremap <silent><expr> <S-TAB>
+  \ coc#pum#visible() ? coc#_select_confirm() :
+  \ coc#expandableOrJumpable() ?
+  \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
 nnoremap <silent> <leader>cc :CocLocalConfig<cr>
+" Use shift+<tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <S-TAB> <Plug>(coc-range-select)
+xmap <silent> <S-TAB> <Plug>(coc-range-select)
