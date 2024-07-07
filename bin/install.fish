@@ -18,7 +18,7 @@ function install_nix_packages
 	end
 	nix-env "$QUIET_FLAG" -if "$ROOT_DIR/nix/common.nix"; or fail "Failed to install common nix packages"
 	if [ $(uname) = "Darwin" ]
-		nix-env -i "$QUIET_FLAG" -f "$ROOT_DIR/nix/mac-only.nix"; or fail "Failed to install mac-only nix packages"
+		nix-env -i "$QUIET_FLAG" -f "$ROOT_DIR/nix/mac.nix"; or fail "Failed to install mac nix packages"
 	end
 
 end
