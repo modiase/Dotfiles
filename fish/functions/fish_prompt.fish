@@ -24,7 +24,11 @@ function fish_prompt
   set -l none     ""
 
   if set -q fish_prompt_prefix
-    echo -n $fish_prompt_prefix " "
+    echo -n "["
+    for value in $fish_prompt_prefix
+      echo -n $value
+    end
+    echo -n "] "
   end
   # Displaying useful information in case of browsing a Git repository
   if git_is_repo
