@@ -22,3 +22,5 @@ vim.api.nvim_set_keymap('n', '<leader>ft', '<cmd>Telescope help_tags<cr>', { nor
 vim.api.nvim_set_keymap("n", "<leader>fw",
   ":lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor({ postfix = \"\"})<CR>",
   { noremap = true })
+vim.keymap.set('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>",
+  { desc = "Find files" })
