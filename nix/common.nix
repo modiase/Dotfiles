@@ -7,6 +7,7 @@ with import <nixpkgs> {};
   gtop 
   httpie 
   jq 
+  jupyter
   jwt-cli
   neovim 
   nodejs 
