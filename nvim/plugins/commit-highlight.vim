@@ -8,7 +8,7 @@ function! HighlightCommitAdditions()
         syntax region commitChanges start=/^# Everything below it will be ignored.$/ end=/\%$/
 
         syntax match commitAddition /^+.*/ contained containedin=commitChanges
-        highlight commitAddition ctermfg=green guifg=green
+        highlight commitAddition guifg=#a3be8c
     endif
 endfunction
 
@@ -17,12 +17,12 @@ function! HighlightCommitRemovals()
         syntax region commitChanges start=/^# Everything below it will be ignored.$/ end=/\%$/
 
         syntax match commitRemoval /^-.*/ contained containedin=commitChanges
-        highlight commitRemoval ctermfg=red guifg=red
+        highlight commitRemoval guifg=#bf616a
     endif
 endfunction
 
 augroup CommitHighlight
     autocmd!
-    autocmd BufRead,BufNewFile COMMIT_EDITMSG call HighlightCommitAdditions()
-    autocmd BufRead,BufNewFile COMMIT_EDITMSG call HighlightCommitRemovals()
+    autocmd BufRead,BufNewFile,WinScrolled COMMIT_EDITMSG call HighlightCommitAdditions()
+    autocmd BufRead,BufNewFile,WinScrolled COMMIT_EDITMSG call HighlightCommitRemovals()
 augroup END
