@@ -6,7 +6,6 @@ Plug 'Shatur/neovim-session-manager'
 Plug 'ThePrimeagen/refactoring.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'akinsho/git-conflict.nvim'
 Plug 'aserowy/tmux.nvim'
 Plug 'dhruvasagar/vim-buffer-history'
