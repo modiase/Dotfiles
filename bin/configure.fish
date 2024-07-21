@@ -114,6 +114,10 @@ function configure_vim_plugins
 	nvim --headless +PlugInstall +q &>/dev/null &
 end
 
+function configure_gpt_cli
+	test -d "$HOME/.config/gpt-cli";or cp -r "$ROOT_DIR/gpt-cli" "$HOME/.config/gpt-cli"
+end
+
 configure_git
 
 configure_fish
@@ -133,3 +137,5 @@ configure_tmux
 configure_login_shell
 
 configure_platform
+
+configure_gpt_cli
