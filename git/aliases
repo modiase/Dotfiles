@@ -1,8 +1,7 @@
+# vim: set ft=sh
 alias gst='git status';
 alias gci='git commit';
 alias gco='git checkout';
-alias gbr='git branch';
-alias ggb='set target $(git branch | fzf | sed -e \'s/^ *[\*\+]* *//\'); and test -z $target; or git checkout $target';
 alias glg='git log --oneline';
 alias gpll='git pull';
 alias gpsh='git push';
