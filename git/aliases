@@ -11,7 +11,7 @@ alias gfch='git fetch';
 alias ggc='git gc'
 alias ggrep='git grep';
 alias ggrph='git log --all --decorate --oneline --graph';
-alias ghm='git checkout $(git symbolic-ref --short HEAD)'
+alias ghm='test "$(git branch --show)" = "$(git symbolic-ref --short HEAD)" || git checkout $(git symbolic-ref --short HEAD)'
 alias glg='git log --oneline';
 alias gls='git ls-files'
 alias gmb='git merge-base'
