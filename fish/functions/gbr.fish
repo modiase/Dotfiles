@@ -17,3 +17,5 @@ function gbr
         git branch $argv
     end
 end
+
+complete -c gbr -w 'git branch'
