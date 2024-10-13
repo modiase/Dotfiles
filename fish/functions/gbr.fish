@@ -1,6 +1,5 @@
 function gbr
     argparse 'd/delete' -- $argv
-    echo $_flag_D
     if test -z "$argv"
         set target (git branch | fzf | sed -e 's/^ *[\*\+]* *//')
         if test -n "$target"; and [ "$target" != "$(git branch --show)" ]
