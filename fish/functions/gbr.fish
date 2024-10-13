@@ -13,7 +13,7 @@ function gbr
             end
         end
     else
-        git branch $argv
+        git branch $_flag_d $argv
     end
 end
 
