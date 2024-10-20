@@ -5,6 +5,7 @@ with import <nixpkgs> {};
   fd 
   fzf 
   gcc 
+  gnused
   gtop 
   httpie 
   jq 
@@ -16,6 +17,7 @@ with import <nixpkgs> {};
   pstree 
   poetry
   ripgrep 
+  ruff
   tldr 
   tmux 
   tree
