@@ -2,6 +2,7 @@ call plug#begin()
 
 
 Plug 'FelipeCRamos/nord-vim-darker'
+Plug 'Makaze/AnsiEsc'
 Plug 'Shatur/neovim-session-manager'
 Plug 'ThePrimeagen/refactoring.nvim'
 Plug 'airblade/vim-gitgutter'
