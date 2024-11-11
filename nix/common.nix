@@ -1,5 +1,6 @@
 with import <nixpkgs> {};
-[ direnv 
+[ cargo
+  direnv
   docker 
   fd 
   fzf 
