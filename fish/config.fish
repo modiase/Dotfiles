@@ -40,5 +40,7 @@ else if test -f '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
     bass 'source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 end
 
+alias csv2json 'python -c \'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))\''
+
 # Ensure last line
 test -f $HOME/.config/fish/config.local.fish; and source $HOME/.config/fish/config.local.fish
