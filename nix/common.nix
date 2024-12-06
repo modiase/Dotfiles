@@ -11,6 +11,7 @@ with import <nixpkgs> {};
   jupyter
   jwt-cli
   neovim 
+  nixtree
   nodejs 
   pstree 
   poetry
