@@ -14,7 +14,7 @@ EXIT_FAILURE=1
 if [[ -n $BASH_VERSION ]];then
 	SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd -P)"
 else
-	echo "Unsupported shell" >&2
+	echo "Unsupported shell. Bash required." >&2
 	exit $EXIT_FAILURE
 fi
 
@@ -32,11 +32,11 @@ ensure_xz(){
 			elif command -v nix &>/dev/null; then
 				nix-env -iA nixpkgs.xz
 			else
-				perror "Please install bash"
+				perror "Could not determine an appropriate package manager to install 'xz'."
 				exit $EXIT_FAILURE
 			fi
 		else
-			perror "Please install bash"
+			perror "Please install 'xz'."
 			exit $EXIT_FAILURE
 		fi
 	fi
@@ -55,11 +55,11 @@ ensure_tar(){
 			elif command -v nix &>/dev/null; then
 				nix-env -iA nixpkgs.tar
 			else
-				perror "Please install bash"
+				perror "Could not determine an appropriate package manager to install 'tar'."
 				exit $EXIT_FAILURE
 			fi
 		else
-			perror "Please install bash"
+			perror "Please install 'tar'"
 			exit $EXIT_FAILURE
 		fi
 	fi
@@ -82,10 +82,10 @@ darwin_install_nix(){
 install_nix(){
 	local platform=$1
 	if [[ "$(check 'nix')" == "1" ]]; then
-		debug "nix already installed"
+		debug "'nix' is already installed."
 		return
 	else
-		debug "Installing nix"
+		debug "Installing 'nix'"
 	fi
 
 
@@ -100,7 +100,7 @@ install_nix(){
 			;;
 
 		*)
-			perror "Unsupported platform"
+			perror "Unsupported platform: ${platform}."
 			exit $EXIT_FAILURE
 			;;
 	esac
@@ -111,7 +111,7 @@ install_nix(){
 
 
 install_fish(){
-	debug "Installing fish shell"
+	debug "Installing fish shell."
 	nix-env -iA nixpkgs.fish &>/dev/null
 }
 
