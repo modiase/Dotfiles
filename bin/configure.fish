@@ -43,7 +43,7 @@ function configure_alacritty
 end
 
 function configure_nvim
-	softreplace "$ROOT_DIR/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+	softreplace "$ROOT_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 end
 
 function configure_coc
