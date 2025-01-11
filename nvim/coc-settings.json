@@ -25,5 +25,5 @@
   "snippets.ultisnips.enable": false,
   "tsserver.maxTsServerMemory": 8192,
   "tsserver.log": "normal",
-  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/17.0.3/clangd_17.0.3/bin/clangd"
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/18.1.3/clangd_18.1.3/bin/clangd"
 }
