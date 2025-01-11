@@ -1,8 +1,6 @@
 # vim: set ft=sh
 alias gadd='git add';
 alias gblg='git reflog show $(git branch --show)'
-# TODO: gcflt may produce unexpected numbers when not doing a 3-way merge. A modification is required to ensure a check to verify if an octopus merge is being performed
-alias gcflt='gdff --check | grep \'conflict marker\' | awk -F \':\' \'{ print $1 }\' | sort -nr | uniq -c | awk -F \' \' \'BEGIN { red="\033[31m";blue="\033[34m";reset="\033[0m"} { print blue $2 reset ":" red $1/3 reset }\''
 alias gci='git commit';
 alias gco='git checkout';
 alias gcp='git cherry-pick'
