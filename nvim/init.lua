@@ -1,8 +1,6 @@
 ---@diagnostic disable-next-line: undefined-global
 local vim = vim
 
-vim.opt.runtimepath:append(vim.fn.expand('~/Dotfiles/nvim'))
-
 local function _pcall(f)
 	local ok, error = pcall(f)
 	if not ok
@@ -12,7 +10,19 @@ local function _pcall(f)
 end
 
 local function setup_plugins()
-	vim.cmd('source ' .. vim.fn.expand('~/Dotfiles/nvim/plugins/index.vim'))
+	local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+	if not vim.loop.fs_stat(lazypath) then
+		vim.fn.system({
+			"git",
+			"clone",
+			"--filter=blob:none",
+			"https://github.com/folke/lazy.nvim.git",
+			"--branch=stable", -- latest stable release
+			lazypath,
+		})
+	end
+	vim.opt.rtp:prepend(lazypath)
+	require('lazy').setup('plugins')
 end
 
 local function setup_options()
@@ -28,7 +38,10 @@ local function setup_functions()
 end
 
 
-_pcall(setup_plugins)
-_pcall(setup_options)
+vim.opt.rtp:prepend(vim.fn.expand('~/Dotfiles/nvim'))
 _pcall(setup_bindings)
 _pcall(setup_functions)
+_pcall(setup_plugins)
+
+vim.opt.rtp:prepend(vim.fn.expand('~/Dotfiles/nvim'))
+_pcall(setup_options)
