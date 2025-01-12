@@ -19,6 +19,7 @@ alias gpll='git pull';
 alias gpsh='git push';
 alias gpwd='git status &>/dev/null && python -c \'import sys;from pathlib import Path;print(Path(sys.argv[2]).relative_to(Path(sys.argv[1])))\' (git rev-parse --show-toplevel) (pwd)'
 alias grb='git rebase';
+alias grbm='git rebase -i (git merge-base HEAD main)';
 alias grlg='git reflog'
 alias grm='git rm';
 alias grmt='git remote'
