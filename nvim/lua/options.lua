@@ -14,3 +14,18 @@ vim.opt.wrap = false
 
 vim.cmd('syntax on')
 vim.cmd('colorscheme nord')
+
+vim.api.nvim_set_hl(0, 'DiffAdd', {
+	fg = '#ffffff',
+	bg = '#103510', -- green with low opacity
+})
+
+vim.api.nvim_set_hl(0, 'DiffChange', {
+	fg = '#ffffff',
+	bg = '#105080', -- blue with low opacity
+})
+
+vim.api.nvim_set_hl(0, 'DiffDelete', {
+	fg = '#ffffff',
+	bg = '#401010', -- red with low opacity
+})
