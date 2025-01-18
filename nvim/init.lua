@@ -25,20 +25,26 @@ local function setup_plugins()
 	require('lazy').setup('plugins')
 end
 
-local function setup_options()
-	require('options')
-end
 
 local function setup_bindings()
 	require('bindings')
+end
+
+local function setup_env()
+	require('env')
 end
 
 local function setup_functions()
 	require('functions')
 end
 
+local function setup_options()
+	require('options')
+end
+
 
 vim.opt.rtp:prepend(vim.fn.expand('~/Dotfiles/nvim'))
+_pcall(setup_env)
 _pcall(setup_bindings)
 _pcall(setup_functions)
 _pcall(setup_plugins)
