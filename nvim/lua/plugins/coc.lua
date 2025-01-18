@@ -127,11 +127,9 @@ return {
 
 		-- CoC extensions
 		vim.g.coc_global_extensions = {
-			'coc-json', 'coc-tsserver', 'coc-snippets',
-			'coc-explorer', 'coc-pyright', 'coc-vimlsp',
-			'coc-prettier', 'coc-clangd',
-			'coc-sh', 'coc-emmet', 'coc-html', 'coc-css',
-			'coc-lua', 'coc-eslint'
+			'@yaegassy/coc-ruff', 'coc-clangd', 'coc-css', 'coc-emmet', 'coc-eslint',
+			'coc-explorer', 'coc-html', 'coc-json', 'coc-lua', 'coc-prettier', 'coc-pyright',
+			'coc-sh', 'coc-snippets', 'coc-tsserver', 'coc-vimlsp',
 		}
 
 		-- Insert mode mappings
