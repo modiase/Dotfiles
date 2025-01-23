@@ -17,15 +17,18 @@ vim.cmd('colorscheme nord')
 
 vim.api.nvim_set_hl(0, 'DiffAdd', {
 	fg = '#ffffff',
-	bg = '#103510', -- green with low opacity
+	bg = '#103510',
+	blend = 80,
 })
 
 vim.api.nvim_set_hl(0, 'DiffChange', {
 	fg = '#ffffff',
-	bg = '#105080', -- blue with low opacity
+	bg = '#105080',
+	blend = 80,
 })
 
 vim.api.nvim_set_hl(0, 'DiffDelete', {
 	fg = '#ffffff',
-	bg = '#401010', -- red with low opacity
+	bg = '#401010',
+	blend = 80,
 })

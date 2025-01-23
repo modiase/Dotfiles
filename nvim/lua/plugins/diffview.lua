@@ -19,7 +19,7 @@ return {
 			})
 		end,
 		keys = {
-			{ '<leader>gd', '<cmd>DiffviewOpen<CR>',        desc = 'Open Diffview' },
+			{ '<leader>gd', '<cmd>DiffviewOpen main<CR>',   desc = 'Open Diffview' },
 			{ '<leader>gh', '<cmd>DiffviewFileHistory<CR>', desc = 'Open File History' },
 			{ '<leader>gc', '<cmd>DiffviewClose<CR>',       desc = 'Close Diffview' },
 		},
