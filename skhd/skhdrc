@@ -2,7 +2,8 @@
 
 # Applications 
 cmd + shift - b : open -a "Google Chrome"
-cmd + shift - c : open -a "Alacritty"
+cmd + shift - t : open -a "Alacritty"
+cmd + shift - c : open -a "Cursor"
 cmd + shift - d : open ~/Downloads/
 
 # change window focus within space
