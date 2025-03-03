@@ -1,5 +1,6 @@
 with import <nixpkgs> {};
-[ cargo
+[ bat
+  cargo
   direnv
   docker 
   fd 
