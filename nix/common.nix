@@ -23,6 +23,7 @@ with import <nixpkgs> {};
   tmux 
   tree
   tshark
+  nix-prefetch-git
   nodePackages.pnpm 
   nodePackages.ts-node 
   nodePackages.typescript 
