@@ -1,5 +1,6 @@
 # vim: set ft=sh
 alias gadd='git add';
+alias gamd='git commit --amend --no-edit';
 alias gblg='git reflog show $(git branch --show)'
 alias gci='git commit';
 alias gco='git checkout';
