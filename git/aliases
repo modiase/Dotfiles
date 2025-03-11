@@ -36,5 +36,6 @@ alias gstsh='git stash';
 alias gsw='git switch'
 alias gtag='git tag';
 alias gtch='GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date "$(date)"'
+alias gupd='git fetch origin main:main'
 alias gwhich='git branch --show'
 alias gwt='git worktree'
