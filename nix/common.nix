@@ -27,4 +27,5 @@ with import <nixpkgs> {};
   nodePackages.pnpm 
   nodePackages.ts-node 
   nodePackages.typescript 
+  uv
 ]
