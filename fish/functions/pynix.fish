@@ -5,7 +5,7 @@ function pynix -d "Create a python environment with the specified packages using
         return 0
     end
 
-    set -l py_version "312"
+    set -l py_version "313"
     if set -q _flag_v
         set py_version (echo $_flag_v | awk -F '.' '{ print $1$2 }')
     end
