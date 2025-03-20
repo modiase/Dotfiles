@@ -18,7 +18,6 @@ with import <nixpkgs> {};
   pstree 
   poetry
   ripgrep 
-  ruff
   tldr 
   tmux 
   tree
