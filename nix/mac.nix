@@ -1,2 +1,2 @@
 with import <nixpkgs> {}; 
-[ colima coreutils-prefixed ]
+[ colima coreutils-prefixed darwin.iproute2mac ]
