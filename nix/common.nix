@@ -27,4 +27,5 @@ with import <nixpkgs> {};
   nodePackages.ts-node 
   nodePackages.typescript 
   uv
+  watch
 ]
