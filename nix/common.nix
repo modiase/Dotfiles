@@ -18,6 +18,15 @@ with import <nixpkgs> {};
   nodejs 
   pstree 
   poetry
+  (python313.withPackages (ps: with ps; [
+    ipython
+    jax
+    jaxlib
+    matplotlib
+    numpy
+    pandas
+    polars
+  ]))
   ripgrep 
   tldr 
   tmux 
