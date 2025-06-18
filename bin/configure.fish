@@ -46,6 +46,10 @@ function configure_nvim
 	softreplace "$ROOT_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 end
 
+function configure_bat
+	softreplace "$ROOT_DIR/bat/config" "$HOME/.config/bat/config"
+end
+
 function configure_coc
 	softreplace "$ROOT_DIR/nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
 end
@@ -139,3 +143,5 @@ configure_login_shell
 configure_platform
 
 configure_gpt_cli
+
+configure_bat
