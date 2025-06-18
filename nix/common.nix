@@ -19,13 +19,11 @@ with import <nixpkgs> {};
   pstree 
   poetry
   (python313.withPackages (ps: with ps; [
+	boto3
     ipython
-    jax
-    jaxlib
     matplotlib
     numpy
     pandas
-    polars
   ]))
   ripgrep 
   tldr 
