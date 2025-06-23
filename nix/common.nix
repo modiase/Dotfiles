@@ -1,11 +1,13 @@
 with import <nixpkgs> {};
-[ bat
+[ awscli2
+  bat
   cargo
   coreutils
   direnv
   docker 
   fd 
   fzf 
+  google-cloud-sdk
   gcc 
   gnused
   gtop 
