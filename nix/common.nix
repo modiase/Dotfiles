@@ -19,7 +19,6 @@ with import <nixpkgs> {};
   nix-tree
   nodejs 
   pstree 
-  poetry
   (python313.withPackages (ps: with ps; [
 	boto3
     ipython
