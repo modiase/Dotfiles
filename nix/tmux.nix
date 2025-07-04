@@ -6,7 +6,6 @@
     clock24 = true;
     keyMode = "vi";
     plugins = with pkgs.tmuxPlugins; [
-      tpm
       sensible
       nord
       vim-tmux-navigator

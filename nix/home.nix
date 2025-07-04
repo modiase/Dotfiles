@@ -9,11 +9,12 @@
     ./neovim.nix
   ];
 
+
   home.username = "moye";
-  home.homeDirectory = "/Users/moye";
+  home.homeDirectory = "$HOME";
 
   home.packages = with pkgs; (
-    (import ./common.nix) ++ (import ./mac.nix)
+    (import ./common.nix { inherit pkgs; }) ++ (import ./mac.nix { inherit pkgs; })
   );
 
   home.stateVersion = "24.05";

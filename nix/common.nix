@@ -1,6 +1,7 @@
-with import <nixpkgs> {};
-[ awscli2
-  bat
+{ pkgs }:
+
+with pkgs; [
+ bat
   cargo
   coreutils
   direnv
@@ -12,10 +13,10 @@ with import <nixpkgs> {};
   gnused
   gtop 
   httpie 
-  jq 
+  jq
   jupyter
   jwt-cli
-  neovim 
+  neovim
   nix-tree
   nodejs 
   pstree 
@@ -32,8 +33,8 @@ with import <nixpkgs> {};
   tree
   tshark
   nix-prefetch-git
-  nodePackages.pnpm 
-  nodePackages.ts-node 
+  nodePackages.pnpm
+  nodePackages.ts-node
   nodePackages.typescript 
   uv
   watch
