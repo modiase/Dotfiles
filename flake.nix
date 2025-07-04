@@ -25,5 +25,10 @@
         inherit pkgs;
         modules = [ ./nix/home.nix ];
       };
+
+      apps.${system}.default = {
+        type = "app";
+        program = home-manager.lib.homeManagerConfiguration { modules = [ ./nix/home.nix ]; };
+      };
     };
 }
