@@ -24,7 +24,7 @@ if status is-interactive
     fish_user_key_bindings
     bind --mode default \cs change_directory
     set -gx fish_greeting ""
-    source $HOME/Dotfiles/git/aliases
+    
 end
 
 
