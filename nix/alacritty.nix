@@ -4,7 +4,8 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      live_config_reload = true;
+      general.live_config_reload = true;
+      terminal.shell.program = "${pkgs.zsh}/bin/zsh";
       colors = {
         bright = {
           black = "#4c566a";
@@ -65,18 +66,17 @@
         normal.family = "Iosevka Nerd Font";
       };
       keyboard.bindings = [
-        { chars = "º"; key = "Key0"; mods = "Alt" }
-        { chars = "¡"; key = "Key1"; mods = "Alt" }
-        { chars = "€"; key = "Key2"; mods = "Alt" }
-        { chars = "#"; key = "Key3"; mods = "Alt" }
-        { chars = "¢"; key = "Key4"; mods = "Alt" }
-        { chars = "∞"; key = "Key5"; mods = "Alt" }
-        { chars = "§"; key = "Key6"; mods = "Alt" }
-        { chars = "¶"; key = "Key7"; mods = "Alt" }
-        { chars = "•"; key = "Key8"; mods = "Alt" }
-        { chars = "ª"; key = "Key9"; mods = "Alt" }
+        { chars = "º"; key = "Key0"; mods = "Alt"; }
+        { chars = "¡"; key = "Key1"; mods = "Alt"; }
+        { chars = "€"; key = "Key2"; mods = "Alt"; }
+        { chars = "#"; key = "Key3"; mods = "Alt"; }
+        { chars = "¢"; key = "Key4"; mods = "Alt"; }
+        { chars = "∞"; key = "Key5"; mods = "Alt"; }
+        { chars = "§"; key = "Key6"; mods = "Alt"; }
+        { chars = "¶"; key = "Key7"; mods = "Alt"; }
+        { chars = "•"; key = "Key8"; mods = "Alt"; }
+        { chars = "ª"; key = "Key9"; mods = "Alt"; }
       ];
-      shell.program = "${pkgs.fish}/bin/fish";
       window = {
         decorations = "transparent";
         dynamic_padding = true;

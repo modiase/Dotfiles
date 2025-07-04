@@ -26,9 +26,11 @@
         modules = [ ./nix/home.nix ];
       };
 
+      packages.${system}.default = self.homeConfigurations."moye".activationPackage;
+
       apps.${system}.default = {
         type = "app";
-        program = home-manager.lib.homeManagerConfiguration { modules = [ ./nix/home.nix ]; };
+        program = "${self.homeConfigurations."moye".activationPackage}/activate";
       };
     };
 }
