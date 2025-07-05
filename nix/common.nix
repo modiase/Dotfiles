@@ -13,9 +13,9 @@ with pkgs; [
   gtop 
   httpie 
   jq
-  jupyter
+  
   jwt-cli
-  neovim
+  
   nix-tree
   nodejs 
   pstree 

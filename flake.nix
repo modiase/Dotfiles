@@ -1,6 +1,6 @@
 
 {
-  description = "Moye's NixOS configuration";
+  description = "Moyewa Odiase - Home Directory Config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
