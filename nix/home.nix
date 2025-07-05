@@ -11,7 +11,8 @@
 
 
   home.username = "moye";
-  home.homeDirectory = "$HOME";
+  home.homeDirectory = "/Users/moye";
+  
 
   home.packages = with pkgs; (
     (import ./common.nix { inherit pkgs; }) ++ (import ./mac.nix { inherit pkgs; })
