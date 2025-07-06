@@ -22,6 +22,7 @@ with pkgs; [
   nodePackages.typescript
   nodejs
   pass
+  pass-git-helper
   poetry
   (python313.withPackages (ps: with ps; [
     boto3
