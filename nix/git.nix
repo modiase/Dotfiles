@@ -7,8 +7,7 @@
     userEmail = "moyeodiase@gmail.com";
     extraConfig = {
       core.editor = "nvim";
-      credential.helper = "vault --vault-path-prefix secret/data/git";
-      credential.vault.addr = "http://127.0.0.1:8200";
+      credential.helper = if pkgs.stdenv.isDarwin then "osxkeychain" else "store";
       filter.lfs.required = true;
       commit.verbose = true;
       rerere.enabled = true;
