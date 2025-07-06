@@ -1,7 +1,7 @@
 { pkgs }:
 
 with pkgs; [
- bat
+  bat
   cargo
   coreutils
   direnv
@@ -12,31 +12,32 @@ with pkgs; [
   gcc 
   gemini-cli
   gnused
-  gtop 
-  httpie 
+  gtop
+  httpie
   jq
-  
   jwt-cli
-  
+  nix-prefetch-git
   nix-tree
-  nodejs 
-  pstree 
+  nodePackages.pnpm
+  nodePackages.ts-node
+  nodePackages.typescript
+  nodejs
+  pass
+  poetry
+  pstree
   (python313.withPackages (ps: with ps; [
-	boto3
+    boto3
     ipython
     matplotlib
     numpy
     pandas
   ]))
-  ripgrep 
-  tldr 
-  tmux 
+  pstree
+  ripgrep
+  tldr
+  tmux
   tree
   tshark
-  nix-prefetch-git
-  nodePackages.pnpm
-  nodePackages.ts-node
-  nodePackages.typescript 
   uv
   watch
 ]
