@@ -9,8 +9,8 @@
       fi
     '' else "";
     initExtra = if pkgs.stdenv.isDarwin then ''
-      if [[ $- == *i* ]] && [ -f "$HOME/.nix-profile/bin/fish" ]; then
-        exec "$HOME/.nix-profile/bin/fish"
+      if [[ $- == *i* && -z "$IN_NIX_SHELL" ]] && type fish > /dev/null 2>&1; then
+        exec fish
       fi
     '' else "";
   };
