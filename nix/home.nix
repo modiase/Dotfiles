@@ -24,12 +24,12 @@
     recursive = true;
   };
 
-  home.activation.create-pass-git-helper-config = ''
-    if [ ! -f "$HOME/.config/pass-git-helper/git-pass-mapping.ini" ]; then
-      mkdir -p "$HOME/.config/pass-git-helper"
-      touch "$HOME/.config/pass-git-helper/git-pass-mapping.ini"
-    fi
-  '';
+  home.file.".config/pass-git-helper/git-pass-mapping.ini" = {
+    text = ''
+      [github.com*]
+      target=git/github.com
+    '';
+  };
 
   home.stateVersion = "24.05";
 }
