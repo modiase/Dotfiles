@@ -1,53 +1,14 @@
+{ pkgs, ... }:
 let
   dotfiles = ../.;
+  functionFiles = builtins.attrNames (builtins.readDir (dotfiles + /fish/functions));
+  toFunctionName = file: pkgs.lib.strings.removeSuffix ".fish" file;
+  functions = pkgs.lib.genAttrs (map toFunctionName functionFiles) (name: builtins.readFile (dotfiles + /fish/functions + "/${name}.fish"));
 in
 {
   programs.fish = {
     enable = true;
-    functions = {
-      _fzf_configure_bindings_help = (builtins.readFile (dotfiles + /fish/functions/_fzf_configure_bindings_help.fish));
-      _fzf_extract_var_info = (builtins.readFile (dotfiles + /fish/functions/_fzf_extract_var_info.fish));
-      _fzf_preview_changed_file = (builtins.readFile (dotfiles + /fish/functions/_fzf_preview_changed_file.fish));
-      _fzf_preview_file = (builtins.readFile (dotfiles + /fish/functions/_fzf_preview_file.fish));
-      _fzf_report_diff_type = (builtins.readFile (dotfiles + /fish/functions/_fzf_report_diff_type.fish));
-      _fzf_report_file_type = (builtins.readFile (dotfiles + /fish/functions/_fzf_report_file_type.fish));
-      _fzf_search_directory = (builtins.readFile (dotfiles + /fish/functions/_fzf_search_directory.fish));
-      _fzf_search_git_log = (builtins.readFile (dotfiles + /fish/functions/_fzf_search_git_log.fish));
-      _fzf_search_git_status = (builtins.readFile (dotfiles + /fish/functions/_fzf_search_git_status.fish));
-      _fzf_search_history = (builtins.readFile (dotfiles + /fish/functions/_fzf_search_history.fish));
-      _fzf_search_processes = (builtins.readFile (dotfiles + /fish/functions/_fzf_search_processes.fish));
-      _fzf_search_variables = (builtins.readFile (dotfiles + /fish/functions/_fzf_search_variables.fish));
-      _fzf_wrapper = (builtins.readFile (dotfiles + /fish/functions/_fzf_wrapper.fish));
-      bind_bang = (builtins.readFile (dotfiles + /fish/functions/bind_bang.fish));
-      bind_dollar = (builtins.readFile (dotfiles + /fish/functions/bind_dollar.fish));
-      envsource = (builtins.readFile (dotfiles + /fish/functions/envsource.fish));
-      fish_prompt = (builtins.readFile (dotfiles + /fish/functions/fish_prompt.fish));
-      fish_right_prompt = (builtins.readFile (dotfiles + /fish/functions/fish_right_prompt.fish));
-      fish_user_key_bindings = (builtins.readFile (dotfiles + /fish/functions/fish_user_key_bindings.fish));
-      fisher = (builtins.readFile (dotfiles + /fish/functions/fisher.fish));
-      fzf_configure_bindings = (builtins.readFile (dotfiles + /fish/functions/fzf_configure_bindings.fish));
-      gbr = (builtins.readFile (dotfiles + /fish/functions/gbr.fish));
-      git_ahead = (builtins.readFile (dotfiles + /fish/functions/git_ahead.fish));
-      git_branch_name = (builtins.readFile (dotfiles + /fish/functions/git_branch_name.fish));
-      git_is_dirty = (builtins.readFile (dotfiles + /fish/functions/git_is_dirty.fish));
-      git_is_repo = (builtins.readFile (dotfiles + /fish/functions/git_is_repo.fish));
-      git_is_staged = (builtins.readFile (dotfiles + /fish/functions/git_is_staged.fish));
-      git_is_stashed = (builtins.readFile (dotfiles + /fish/functions/git_is_stashed.fish));
-      git_is_touched = (builtins.readFile (dotfiles + /fish/functions/git_is_touched.fish));
-      git_is_worktree = (builtins.readFile (dotfiles + /fish/functions/git_is_worktree.fish));
-      git_untracked = (builtins.readFile (dotfiles + /fish/functions/git_untracked.fish));
-      isodate = (builtins.readFile (dotfiles + /fish/functions/isodate.fish));
-      "jira-profile" = (builtins.readFile (dotfiles + /fish/functions/jira-profile.fish));
-      jira = (builtins.readFile (dotfiles + /fish/functions/jira.fish));
-      lg = (builtins.readFile (dotfiles + /fish/functions/lg.fish));
-      pynix = (builtins.readFile (dotfiles + /fish/functions/pynix.fish));
-      ren = (builtins.readFile (dotfiles + /fish/functions/ren.fish));
-      sandbox = (builtins.readFile (dotfiles + /fish/functions/sandbox.fish));
-      timestamp = (builtins.readFile (dotfiles + /fish/functions/timestamp.fish));
-      touch2 = (builtins.readFile (dotfiles + /fish/functions/touch2.fish));
-      watchheader = (builtins.readFile (dotfiles + /fish/functions/watchheader.fish));
-      with_env = (builtins.readFile (dotfiles + /fish/functions/with_env.fish));
-    };
+    functions = functions;
     shellAliases = {
       gadd = "git add";
       gamd = "git commit --amend --no-edit";

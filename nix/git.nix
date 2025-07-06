@@ -7,7 +7,7 @@
     userEmail = "moyeodiase@gmail.com";
     extraConfig = {
       core.editor = "nvim";
-      credential.helper = if pkgs.stdenv.isDarwin then "osxkeychain" else "store";
+      credential.helper = if pkgs.stdenv.isDarwin then "osxkeychain" else "${pkgs.pass}/bin/pass-git-helper";
       filter.lfs.required = true;
       commit.verbose = true;
       rerere.enabled = true;
