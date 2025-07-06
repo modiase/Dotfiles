@@ -9,6 +9,7 @@ with pkgs; [
   fd 
   fzf 
   gcc 
+  gemini-cli
   gnused
   gtop 
   httpie 
