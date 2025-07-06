@@ -23,21 +23,4 @@
   };
 
   home.stateVersion = "24.05";
-
-  systemd.user.services.vault = {
-    Unit = {
-      Description = "HashiCorp Vault Agent";
-      After = [ "network.target" ];
-    };
-
-    Service = {
-      ExecStart = "${pkgs.vault}/bin/vault server -dev";
-      Restart = "on-failure";
-      RestartSec = "5s";
-    };
-
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-  };
 }

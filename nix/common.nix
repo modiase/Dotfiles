@@ -39,6 +39,4 @@ with pkgs; [
   nodePackages.typescript 
   uv
   watch
-  vault
-  git-credential-vault
 ]

@@ -24,27 +24,6 @@
           system = "x86_64-linux";
           config.allowUnfree = true;
           overlays = [
-            (self: super: {
-              git-credential-vault = super.buildGoModule rec {
-                pname = "git-credential-vault";
-                version = "unstable-2022-01-22";
-
-                src = super.fetchFromGitHub {
-                  owner = "Luzifer";
-                  repo = "git-credential-vault";
-                  rev = "62480b3d90c28aeda07b656e07b8647d10cf16f3";
-                  sha256 = "10ikys73mrkl942yr3kdgznff9p3881rjjkvwnj231v55vlzapra";
-                };
-
-                vendorHash = "sha256-USV3K4SCWW5PSlk3H0ZkuzwH/TJiZEr1dG1OuvBN29Y=";
-
-                meta = with super.lib; {
-                  description = "A git credential helper for HashiCorp Vault";
-                  homepage = "https://github.com/Luzifer/git-credential-vault";
-                  license = licenses.mit;
-                };
-              };
-            })
           ];
         };
         modules = [
@@ -61,27 +40,6 @@
           system = "aarch64-darwin";
           config.allowUnfree = true;
           overlays = [
-            (self: super: {
-              git-credential-vault = super.buildGoModule rec {
-                pname = "git-credential-vault";
-                version = "unstable-2022-01-22";
-
-                src = super.fetchFromGitHub {
-                  owner = "Luzifer";
-                  repo = "git-credential-vault";
-                  rev = "62480b3d90c28aeda07b656e07b8647d10cf16f3";
-                  sha256 = "10ikys73mrkl942yr3kdgznff9p3881rjjkvwnj231v55vlzapra";
-                };
-
-                vendorHash = "sha256-USV3K4SCWW5PSlk3H0ZkuzwH/TJiZEr1dG1OuvBN29Y=";
-
-                meta = with super.lib; {
-                  description = "A git credential helper for HashiCorp Vault";
-                  homepage = "https://github.com/Luzifer/git-credential-vault";
-                  license = licenses.mit;
-                };
-              };
-            })
           ];
         };
         modules = [
