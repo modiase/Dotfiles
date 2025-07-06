@@ -18,5 +18,10 @@
     (import ./common.nix { inherit pkgs; }) ++ (import ./mac.nix { inherit pkgs; })
   );
 
+  home.file.".config/nvim" = {
+    source = ../nvim;
+    recursive = true;
+  };
+
   home.stateVersion = "24.05";
 }
