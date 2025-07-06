@@ -11,7 +11,6 @@
 
 
   home.username = "moye";
-  home.homeDirectory = "/Users/moye";
   
 
   home.packages = with pkgs; (
