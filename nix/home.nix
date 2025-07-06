@@ -14,7 +14,7 @@
   
 
   home.packages = with pkgs; (
-    (import ./common.nix { inherit pkgs; }) ++ (import ./mac.nix { inherit pkgs; })
+    (import ./common.nix { inherit pkgs; }) ++ (if stdenv.isDarwin then (import ./darwin.nix { inherit pkgs; }) else [])
   );
 
   home.file.".config/nvim" = {

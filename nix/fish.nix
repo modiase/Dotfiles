@@ -94,8 +94,9 @@ in
       csv2json = "python -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'";
     };
     shellInit = ''
-      set -gx DOTFILES \"$HOME/Dotfiles\"
-      set -gx MANPAGER \"nvim +Man!\"
+      set -gx DOTFILES "$HOME/Dotfiles"
+      set -gx MANPAGER "nvim +Man!"
+      set -U fish_prompt_prefix (hostname)
     '';
     interactiveShellInit = ''
       function change_directory
