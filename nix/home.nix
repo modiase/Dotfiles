@@ -23,4 +23,16 @@
   };
 
   home.stateVersion = "24.05";
+
+  programs.bash.initExtra = ''
+    if [[ -z "$FISH_VERSION" && -n "$PS1" && -n "$BASH_VERSION" && -f "${pkgs.fish}/bin/fish" ]]; then
+      exec ${pkgs.fish}/bin/fish
+    fi
+  '';
+
+  programs.zsh.initExtra = ''
+    if [[ -z "$FISH_VERSION" && -n "$PS1" && -f "${pkgs.fish}/bin/fish" ]]; then
+      exec ${pkgs.fish}/bin/fish
+    fi
+  '';
 }

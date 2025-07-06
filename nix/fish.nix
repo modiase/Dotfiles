@@ -122,7 +122,9 @@ in
 
       fish_user_key_bindings
       bind \cs change_directory
-      set -gx fish_greeting ""
+      function fish_greeting
+        fish_prompt
+      end
     '';
   };
 }
