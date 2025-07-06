@@ -10,6 +10,7 @@ with pkgs; [
   fzf 
   google-cloud-sdk
   gcc 
+  gemini-cli
   gnused
   gtop 
   httpie 
