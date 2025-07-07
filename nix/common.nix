@@ -1,7 +1,6 @@
 { pkgs }:
 
 with pkgs; [
-  bat
   cargo
   claude-code
   coreutils
@@ -34,7 +33,6 @@ with pkgs; [
   pstree
   ripgrep
   tldr
-  tmux
   tree
   tshark
   uv
