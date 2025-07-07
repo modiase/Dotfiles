@@ -29,6 +29,7 @@
             })
           ];
         };
+        extraSpecialArgs = { system = "x86_64-linux"; };
         modules = [
           ./nix/home.nix
           {
@@ -48,8 +49,10 @@
             })
           ];
         };
+        extraSpecialArgs = { system = "aarch64-darwin"; };
         modules = [
           ./nix/home.nix
+          ./nix/darwin.nix
           {
             home.homeDirectory = "/Users/${username}";
             home.stateVersion = "24.05";
@@ -58,3 +61,4 @@
       };
     };
 }
+

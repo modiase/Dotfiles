@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, system, ... }:
 
 {
   imports = [
@@ -11,14 +11,14 @@
     ./neovim.nix
     ./tmux.nix
     ./zsh.nix
-  ];
+  ] ++ (if system == "aarch64-darwin" then [ ./darwin.nix ] else [ ]);
 
 
   home.username = "moye";
   
 
   home.packages = with pkgs; (
-    (import ./common.nix { inherit pkgs; }) ++ (if stdenv.isDarwin then (import ./darwin.nix { inherit pkgs; }) else [])
+    (import ./common.nix { inherit pkgs; })
   );
 
   home.file.".config/nvim" = {
