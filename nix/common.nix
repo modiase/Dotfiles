@@ -32,6 +32,7 @@ with pkgs; [
     matplotlib
     numpy
     pandas
+    ruff
   ]))
   pstree
   ripgrep
