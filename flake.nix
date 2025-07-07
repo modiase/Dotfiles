@@ -24,6 +24,9 @@
           system = "x86_64-linux";
           config.allowUnfree = true;
           overlays = [
+            (self: super: {
+              gpt-cli = super.callPackage ./nix/nixpkgs/gpt-cli { };
+            })
           ];
         };
         modules = [
@@ -40,6 +43,9 @@
           system = "aarch64-darwin";
           config.allowUnfree = true;
           overlays = [
+            (self: super: {
+              gpt-cli = super.callPackage ./nix/nixpkgs/gpt-cli { };
+            })
           ];
         };
         modules = [
