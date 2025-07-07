@@ -3,6 +3,7 @@
 with pkgs; [
   bat
   cargo
+  claude-code
   coreutils
   direnv
   docker
