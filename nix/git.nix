@@ -14,6 +14,7 @@
       gpg.format = "openpgp";
       gpg.openpgp.program = "${pkgs.gnupg}/bin/gpg";
 	  push.autoSetupRemote = true;
+      pull.rebase = true;
     };
   };
 }
