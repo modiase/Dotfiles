@@ -1,3 +1,5 @@
+vim.g.mapleader = ' '
+
 -- Step 1: Bootstrap lazy.nvim
 -- This must come first to ensure the runtime path is set up correctly.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
