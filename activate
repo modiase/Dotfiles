@@ -15,4 +15,8 @@ for cmd in git nix; do
   fi
 done
 
-nix shell nixpkgs#home-manager -c home-manager switch --flake .#moye
+if [ "$(uname -s)" = "Darwin" ]; then
+  nix shell nixpkgs#home-manager -c home-manager switch --flake .#moye-darwin
+else
+  nix shell nixpkgs#home-manager -c home-manager switch --flake .#moye
+fi
