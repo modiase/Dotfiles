@@ -9,7 +9,7 @@
       fi
     '' else "";
     initExtra = if !pkgs.stdenv.isDarwin then ''
-      if [[ $- == *i* && -z "$IN_NIX_SHELL" ]] && type fish > /dev/null 2>&1; then
+      if [[ $- == *i* && -z "$IN_NIX_SHELL" && -z "$NO_FISH" ]] && type fish > /dev/null 2>&1; then
         exec fish
       fi
     '' else "";
