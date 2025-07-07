@@ -4,6 +4,7 @@
   imports = [
     ./alacritty.nix
     ./bash.nix
+    ./btop.nix
     ./fish.nix
     ./git.nix
     ./neovim.nix

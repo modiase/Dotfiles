@@ -12,7 +12,6 @@ with pkgs; [
   gcc 
   gemini-cli
   gnused
-  gtop
   httpie
   jq
   jwt-cli
