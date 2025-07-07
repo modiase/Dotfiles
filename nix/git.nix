@@ -3,7 +3,7 @@
 {
   programs.git = {
     enable = true;
-    userName = "Moye";
+    userName = "Moye Odiase";
     userEmail = "moyeodiase@gmail.com";
     extraConfig = {
       core.editor = "nvim";
@@ -13,6 +13,7 @@
       rerere.enabled = true;
       gpg.format = "openpgp";
       gpg.openpgp.program = "${pkgs.gnupg}/bin/gpg";
+	  push.autoSetupRemote = true;
     };
   };
 }
