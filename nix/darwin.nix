@@ -1,4 +1,12 @@
-{ pkgs }:
+{ pkgs, ... }:
 
-with pkgs; [
- colima coreutils-prefixed iproute2mac ]
+{
+  imports = [
+  ];
+
+  home.packages = with pkgs; [
+    colima
+    coreutils-prefixed
+    iproute2mac
+  ];
+}
