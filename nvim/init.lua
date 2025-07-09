@@ -23,7 +23,6 @@ local function _pcall(f_name)
   end
 end
 
-_pcall('env')
 _pcall('bindings')
 _pcall('functions')
 _pcall('options')
