@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./skhd.nix
+    ./yabai.nix
   ];
 
   home.packages = with pkgs; [

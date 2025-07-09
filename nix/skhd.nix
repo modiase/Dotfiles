@@ -1,14 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  # Enable the skhd service
-  services.skhd.enable = true;
+  home.packages = with pkgs; [
+    skhd
+  ];
 
-  # Create the config file with the desired content
   home.file.".config/skhd/skhdrc".text = ''
-    # Changing window focus
-
-    # Applications
     cmd + shift - b : open -a "Google Chrome"
     cmd + shift - t : open -a "Alacritty"
     cmd + shift - c : open -a "Cursor"
