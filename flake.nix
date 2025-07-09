@@ -15,11 +15,12 @@
       username = "moye";
       systems = [
         "x86_64-linux"
+        "aarch64-linux"
         "aarch64-darwin"
       ];
     in
     {
-      homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."${username}-x86_64-linux" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
           config.allowUnfree = true;
@@ -39,7 +40,27 @@
         ];
       };
 
-      homeConfigurations."${username}-darwin" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."${username}-aarch64-linux" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "aarch64-linux";
+          config.allowUnfree = true;
+          overlays = [
+            (self: super: {
+              gpt-cli = super.callPackage ./nix/nixpkgs/gpt-cli { };
+            })
+          ];
+        };
+        extraSpecialArgs = { system = "aarch64-linux"; };
+        modules = [
+          ./nix/home.nix
+          {
+            home.homeDirectory = "/home/${username}";
+            home.stateVersion = "24.05";
+          }
+        ];
+      };
+
+      homeConfigurations."${username}-aarch64-darwin" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "aarch64-darwin";
           config.allowUnfree = true;
@@ -52,7 +73,6 @@
         extraSpecialArgs = { system = "aarch64-darwin"; };
         modules = [
           ./nix/home.nix
-          ./nix/darwin.nix
           {
             home.homeDirectory = "/Users/${username}";
             home.stateVersion = "24.05";

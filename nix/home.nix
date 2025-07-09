@@ -1,4 +1,4 @@
-{ config, pkgs, system, ... }:
+{ config, pkgs, system, lib, ... }:
 
 {
   imports = [
@@ -11,7 +11,15 @@
     ./neovim.nix
     ./tmux.nix
     ./zsh.nix
-  ] ++ (if system == "aarch64-darwin" then [ ./darwin.nix ] else [ ]);
+  ] ++ (
+    if system == "aarch64-darwin"
+    then [ ./platforms/darwin.nix ]
+    else [ ./platforms/linux.nix ]
+  ) ++ (
+    if lib.hasPrefix "aarch64" system
+    then [ ./architectures/aarch64.nix ]
+    else [ ./architectures/x86_64.nix ]
+  );
 
 
   home.username = "moye";
