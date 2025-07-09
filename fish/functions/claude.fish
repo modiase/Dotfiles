@@ -1,3 +1,4 @@
+function claude
     if set -q ANTHROPIC_API_KEY
         command claude $argv
         return
@@ -27,5 +28,5 @@
         end
     end
 
-    set -gx ANTHROPIC_API_KEY "$api_key"
-    command claude $argv
+    ANTHROPIC_API_KEY="$api_key" command claude $argv
+end

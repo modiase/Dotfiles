@@ -1,3 +1,4 @@
+function gemini
     if set -q GEMINI_API_KEY
         command gemini $argv
         return
@@ -27,5 +28,5 @@
         end
     end
 
-    set -gx GEMINI_API_KEY "$api_key"
-    command gemini $argv
+    GEMINI_API_KEY="$api_key" command gemini $argv
+end
