@@ -8,7 +8,15 @@
 }:
 
 let
-  wireguardKey = builtins.getEnv "HEKATE_WG_KEY";
+  encryptedKey = ''
+    -----BEGIN PGP MESSAGE-----
+
+    jA0ECQMKZfP5uVnNOd//0mIB7mc14m7zaN8zlZL5SYvaPbSvmKZypZwybLGFlyN6
+    w6CgPLJ+F1WG/dRBCt922ujvCmRYS3jVvpn1Zoo5WG1/HiHU1l/sBGZOTSK1YBZm
+    7/EWgKhLVFuBBuipvtY3ZtYI5Q==
+    =GlBK
+    -----END PGP MESSAGE-----
+  '';
 in
 
 {
@@ -40,13 +48,9 @@ in
     "cma=128M"
   ];
 
-  boot.initrd.secrets = lib.mkIf (wireguardKey != "") {
-    "/etc/wireguard/private.key" = pkgs.writeText "wg-key" wireguardKey;
-  };
-
-  boot.initrd.postMountCommands = lib.mkIf (wireguardKey != "") ''
+  boot.initrd.postMountCommands = ''
     mkdir -p $targetRoot/etc/wireguard
-    cp /etc/wireguard/private.key $targetRoot/etc/wireguard/private.key
+    echo '${encryptedKey}' | ${pkgs.gnupg}/bin/gpg --decrypt --quiet --batch --passphrase "$(cat /proc/device-tree/serial-number | tr -d '\0')" > $targetRoot/etc/wireguard/private.key
     chmod 400 $targetRoot/etc/wireguard/private.key
     chown root:root $targetRoot/etc/wireguard/private.key
   '';
@@ -66,6 +70,7 @@ in
     vim
     htop
     util-linux
+    gnupg
   ];
 
   hardware.enableRedistributableFirmware = true;
@@ -77,7 +82,7 @@ in
   networking.extraHosts = "127.0.0.1 hekate.home hekate";
   networking.useDHCP = true;
   networking.firewall.checkReversePath = "loose";
-  networking.wireguard.interfaces.wg0 = lib.mkIf (wireguardKey != "") {
+  networking.wireguard.interfaces.wg0 = {
     ips = [ "10.0.0.1/24" ];
     listenPort = 51820;
     privateKeyFile = "/etc/wireguard/private.key";
@@ -133,6 +138,29 @@ in
       53
       22
     ];
+    extraCommands = ''
+      iptables -A FORWARD -i wg0 -o end0 -j ACCEPT
+      iptables -A FORWARD -i end0 -o wg0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+    '';
+    extraStopCommands = ''
+      iptables -D FORWARD -i wg0 -o end0 -j ACCEPT 2>/dev/null || true
+      iptables -D FORWARD -i end0 -o wg0 -m state --state RELATED,ESTABLISHED -j ACCEPT 2>/dev/null || true
+    '';
+  };
+
+  networking.nat = {
+    enable = true;
+    internalInterfaces = [ "wg0" ];
+    externalInterface = "end0";
+    forwardPorts = [ ];
+    extraCommands = ''
+      iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o end0 -j MASQUERADE
+      iptables -t nat -A PREROUTING -d 10.0.100.0/24 -j NETMAP --to 192.168.1.0/24
+    '';
+    extraStopCommands = ''
+      iptables -t nat -D POSTROUTING -s 10.0.0.0/24 -o end0 -j MASQUERADE 2>/dev/null || true
+      iptables -t nat -D PREROUTING -d 10.0.100.0/24 -j NETMAP --to 192.168.1.0/24 2>/dev/null || true
+    '';
   };
 
   services.openssh = {
